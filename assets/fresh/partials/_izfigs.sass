@@ -1,10 +1,53 @@
 /* izfigs */
 
+.izdocslink
+	background: #d2d2d2;
+	padding: 19px 14px 10px 10px;
+	display: inline
+	object
+		display: inline;
+		width: 25px;
+		height: auto;
+	.doclink
+		display: inline;
+		position: relative;
+		top: -3px;
+		left: 4px;
+		color: #000;
+
+.izdocslink-nomobile
+	&.spacer
+		display: block;
+		height: 20px;
+
+@media (max-width: 767px)
+	.izdocslink-nomobile
+		&.spacer
+			display: none;
+	.izdocslink
+		background: none;
+		padding: none;
+		display: inline
+		object
+			display: inline;
+			width: 20px;
+			height: auto;
+		.doclink
+			display: inline;
+			position: relative;
+			top: -3px;
+			left: 4px;
+			color: inherit;
+			font-size: 0.9rem;
+	
+
 .izfigwrapleft
 	position: relative;
 	padding: 0;
 	float: left;
 	width: 40%;	
+	&.piconly
+		background: none;
 	background: $izuma-blue;
 	margin: 1rem 2rem 1rem -15px;
 	&.block30
@@ -68,10 +111,18 @@
 			margin-left: 0;
 
 	.izfigleft
+		&.piconly
+			position: relative;
+		.mobile
+			display: none;
+		.desktop
+			display: inline;
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		figure
+			&.piconly
+				position: relative;
 			margin: 0;
 			margin-left: 10px;
 			position: absolute;
@@ -92,6 +143,8 @@
 	padding: 0;
 	float: right;
 	width: 40%;	
+	&.piconly
+		background: none;
 	background: $izuma-blue;
 	margin: 1rem 0 2rem 2rem;
 	&.block30
@@ -146,10 +199,18 @@
 			font-size: 90%;
 			margin-left: 0;
 	.izfigright
+		&.piconly
+			position: relative;
+		.mobile
+			display: none;
+		.desktop
+			display: inline;
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		figure
+			&.piconly
+				position: relative;
 			margin: 0;
 			margin-left: 10px;
 			position: absolute;
@@ -246,6 +307,10 @@
 			.desktop
 				display: none;
 	.izfigwrapleft
+		.mobile
+			display: inline;
+		.desktop
+			display: none;	
 		position: relative;
 		padding: 0;
 		margin: 1rem 2rem 1rem 0;
@@ -291,6 +356,10 @@
 				width: calc(100% - 10px);
 				left: 10px;
 	.izfigwrapright
+		.mobile
+			display: inline;
+		.desktop
+			display: none;	
 		position: relative;
 		padding: 0;
 		float: none;

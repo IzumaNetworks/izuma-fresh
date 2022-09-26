@@ -11,14 +11,10 @@
 {{- $mobile := default $image (.Get "mobile") -}}
 {{ end}}
 
-<!-- https://stackoverflow.com/questions/644896/how-do-i-scale-a-stubborn-svg-embedded-with-the-object-tag -->
-<div class="izfigwrapwide block{{ .Get "block"}}">
-	{{ with $anchor }}
-		<a class="titleanchor" id="{{ . }}"></a>
-	{{ end }}
-	<div class="izfigwide">
+<div class="izfigwrapright piconly block{{ .Get "block"}}">
+	<div class="izfigright piconly">
 		<div class="desktop">
-			<figure>
+			<figure class="piconly">
 			{{ if $svgobj }}
 	        <object style="max-width:{{ $maxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $svgobj | relURL }}" alt="{{ $desc }}"></object>
 			{{ end }}
@@ -26,10 +22,9 @@
 	        <img style="max-width:{{ $maxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $image | relURL }}" alt="{{ $desc }}" />
 			{{ end }}		
 			</figure>
-	<!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
 		</div>
 		<div class="mobile">
-			<figure>
+			<figure class="piconly">
 			{{ if $svgobj }}
 	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobile | relURL }}" alt="{{ $desc }}"></object>
 			{{ end }}
@@ -37,12 +32,6 @@
 	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobile | relURL }}" alt="{{ $desc }}" />
 			{{ end }}		
 			</figure>
-	<!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
 		</div>
 	</div>
-	{{ with .Inner }}
-	<div class="caption">
-		{{ .Inner | safeHTML }}
-	</div>
-	{{ end }}
 </div>

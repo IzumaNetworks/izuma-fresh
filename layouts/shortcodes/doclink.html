@@ -1,0 +1,9 @@
+{{- $link := default "/" (.Get "link") -}}
+{{- $svgobj := default "izuma-blocks-for-docs.svg" -}}
+<div class="izdocslink-nomobile spacer"></div>
+<a href="{{ printf "https://developer.izumanetworks.com%s" $link }}" class="izdocslink">
+    <object type="image/svg+xml" data="{{ printf "/images/%s" $svgobj | relURL }}"></object>
+	<div class="doclink">
+		{{ .Inner | safeHTML }}
+	</div>
+</a>
