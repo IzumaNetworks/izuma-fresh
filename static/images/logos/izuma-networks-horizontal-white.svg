@@ -6,8 +6,8 @@
    xml:space="preserve"
    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
    id="svg98"
-   sodipodi:docname="izuma-logo-horizontal.svg"
-   inkscape:version="1.2.1 (ef4d3fba62, 2022-07-19, custom)"
+   sodipodi:docname="izuma-networks-horizontal-white.svg"
+   inkscape:version="1.2.1 (0f2f062aeb, 2022-09-21, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -40,8 +40,8 @@
    inkscape:deskcolor="#d1d1d1"
    showgrid="false"
    inkscape:zoom="2.0436817"
-   inkscape:cx="186.18359"
-   inkscape:cy="88.810305"
+   inkscape:cx="177.1313"
+   inkscape:cy="89.29962"
    inkscape:window-width="2486"
    inkscape:window-height="1376"
    inkscape:window-x="74"
@@ -53,7 +53,8 @@
    id="g96">
         <g
    transform="matrix(1,0,0,1,341.417,-20.2249)"
-   id="g42">
+   id="izuma"><title
+   id="title950">izuma</title>
             <g
    transform="matrix(1,0,0,1,-639.711,251.786)"
    id="g20">
@@ -106,7 +107,8 @@
                 <path
    d="M1510.94,732.994C1504.17,723.922 1496.39,723.058 1492.22,723.058C1483.72,723.058 1477.38,726.082 1472.35,731.122C1466.01,737.458 1461.83,746.962 1461.83,758.914C1461.83,771.154 1466.15,780.226 1471.91,786.13C1477.67,792.034 1484.15,794.05 1490.92,794.05C1495.1,794.05 1503.45,793.186 1511.08,783.682L1512.09,783.682C1511.51,785.41 1510.94,788.002 1510.79,789.874L1510.65,792.178L1542.9,792.178L1542.9,724.93L1510.51,724.93L1510.51,726.802C1510.51,727.954 1510.65,729.97 1511.66,732.562L1510.94,732.994ZM1494.38,758.482C1494.38,755.314 1495.67,752.866 1497.26,751.282C1498.84,749.698 1501,748.978 1503.16,748.978C1505.46,748.978 1507.34,749.842 1508.78,751.138C1510.36,752.578 1511.66,755.026 1511.66,758.194C1511.66,761.218 1510.36,763.81 1508.49,765.682C1506.76,767.266 1504.89,767.842 1502.87,767.842C1500.71,767.842 1498.84,767.122 1497.26,765.538C1495.67,763.954 1494.38,761.794 1494.38,758.482Z"
    style="fill-rule:nonzero;image-rendering:auto;fill:#f4f4f4;fill-opacity:1"
-   id="path38" />
+   id="a"><title
+     id="title952">&quot;a&quot;</title></path>
             </g>
         </g>
         <g
@@ -202,8 +204,9 @@
    id="g84">
                 <path
    d="M1228.67,973.528L1228.67,939.089L1263.44,975.534L1263.44,928.924L1258.49,928.924L1258.49,963.497L1223.72,927.052L1223.72,973.528L1228.67,973.528Z"
-   style="fill:#656565;"
-   id="path82" />
+   style="fill:#ffffff;fill-opacity:1"
+   id="N"><title
+     id="title900">&quot;N&quot;</title></path>
             </g>
             <g
    transform="matrix(1,0,0,1,-625.083,-367.475)"
