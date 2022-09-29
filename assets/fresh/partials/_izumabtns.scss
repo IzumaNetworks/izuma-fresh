@@ -42,14 +42,56 @@
 
 .navbar-item {
 	.button {
-		&.login-btn {
-			background: $izuma-orange;
-			color: #FFF;
-			-webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-			clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-			margin: 0px;
-			padding: 30px 30px 25px 30px;
-			margin-top: -12px;
-		}
+        &.login-btn {
+            background: $izuma-orange;
+            color: #FFF;
+            -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+            clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+            margin: 0px;
+            padding: 30px 30px 25px 30px;
+            width: 150px;
+            margin-top: -12px;
+        }
+        &.btn2 {
+            background: $izuma-blue;
+            border-color: $izuma-blue;
+            color: #FFF;
+            -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+            clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+            margin: 0px;
+            padding: 30px 30px 25px 30px;
+            width: 155px;
+            margin-right: -50px;
+            margin-top: -12px;
+        }
 	}
+}
+
+@media screen and (max-width: 1087px) {
+    .navbar-item {
+        .button {
+            &.login-btn {
+                background: $izuma-orange;
+                color: #FFF;
+                -webkit-clip-path: none;
+                clip-path: none;
+                margin: 0px;
+                padding: 15px 15px 15px 15px;
+                width: 150px;
+                margin-top: -12px;
+            }
+            &.btn2 {
+                background: $izuma-blue;
+                border-color: $izuma-blue;
+                color: #FFF;
+                -webkit-clip-path: none;
+                clip-path: none;
+                margin: 0px;
+                padding: 15px 15px 15px 15px;
+                width: 150px;
+                margin-right: 0;
+                margin-top: -12px;
+            }
+        }
+    }    
 }

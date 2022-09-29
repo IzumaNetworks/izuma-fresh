@@ -74,6 +74,12 @@
             {{ .title }}
           </span>
         </a>
+        {{- else if .button2 }}
+        <a href="{{ .url }}" class="navbar-item">
+          <span class="button secondary-btn btn2 raised">
+            {{ .title }}
+          </span>
+        </a>
         {{- else }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
           {{ .title }}
