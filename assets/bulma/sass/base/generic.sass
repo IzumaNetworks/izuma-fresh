@@ -28,6 +28,7 @@ html
   overflow-y: scroll
   text-rendering: $body-rendering
   text-size-adjust: 100%
+  height: 100%;
 
 article,
 aside,
@@ -56,6 +57,12 @@ body
   font-size: 1rem
   font-weight: $body-weight
   line-height: $body-line-height
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+.wrapcontent
+  flex: 1 0 auto;
 
 // Inline
 

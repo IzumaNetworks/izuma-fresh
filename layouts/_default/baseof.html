@@ -6,6 +6,7 @@
     {{ partial "izumafonts.html" . }}        
   </head>
   <body>
+    <div class="wrapcontent">
     {{ if ne .Site.Params.preloader false }}
     <!-- Preloader -->
     <div id="preloader">
@@ -25,7 +26,7 @@
     {{ end }}
 
     {{ end }}
-
+    </div>
     {{ if .Params.include_footer }}
     {{ partial "footer.html" . }}
     {{ end }}

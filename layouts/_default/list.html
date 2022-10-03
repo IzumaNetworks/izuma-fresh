@@ -4,10 +4,10 @@
 {{ partial "navbar-clone.html" . }}
 {{ partial "single/content.html" . }}
 
-    {{ if .Params.include_footer }}
+<!--     {{ if .Params.include_footer }}
     {{ partial "footer.html" . }}
     {{ end }}
-
+ -->
 <!--  <h1 class="title section-title">{{ .Title }}</h1> -->
   {{ range .Pages }}
     {{ .Render "summary"}}
