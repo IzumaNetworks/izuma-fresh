@@ -14,22 +14,23 @@
     </div>
     {{ end }}
 
+    <div class="wrapcontent">
     {{ block "main" . }}
 
-    {{ partial "single/single.html" . }}
-
-    {{ if .Params.include_footer }}
-    {{ partial "footer.html" . }}
-    {{ end }}
-
-    <!-- Back To Top Button -->
-    <div id="backtotop"><a href="#"></a></div>
+   {{ partial "single/single.html" . }}
 
     {{ if .Params.sidebar }}
     {{ partial "single/sidebar.html" . }}
     {{ end }}
 
     {{ end }}
+    </div>
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
 
     {{ partial "javascript.html" . }}
     {{ partial "consent.html" }}    

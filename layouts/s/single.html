@@ -14,12 +14,8 @@
 
     {{ block "main" . }}
 
-
     {{ partial "single/izuma-single.html" . }}
 
-    {{ if .Params.include_footer }}
-    {{ partial "footer.html" . }}
-    {{ end }}
 
 
     <!-- Back To Top Button -->
@@ -29,6 +25,10 @@
     {{ partial "sidebar2.html" . }}
     {{ end }}
 
+    {{ end }}
+
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
     {{ end }}
 
     {{ partial "javascript.html" . }}

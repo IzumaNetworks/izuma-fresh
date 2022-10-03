@@ -21,6 +21,10 @@
     {{ partial "sidebar.html" . }}
     {{ end }}
 
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
     {{ partial "javascript.html" . }}
     {{ partial "consent.html" }}    
   </body>

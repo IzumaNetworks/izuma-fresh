@@ -1,0 +1,29 @@
+/* press style - for press articles 
+*/
+
+article.press {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	.summaryheader {
+		h2 {
+			font-weight: 600;			
+		}
+
+	}
+	.summary {
+		font-family: "Roboto Mono", monospace;
+		background: #EEE;
+		padding: 15px;
+	}
+}
+
+@media (max-width: 767px) {
+article.press {
+	max-width: 90%;
+	.summary {
+		padding: 10px;
+	}
+}
+
+}
