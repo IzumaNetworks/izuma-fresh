@@ -1,0 +1,15 @@
+<article class="jobs">
+  <div class="summaryheader">
+    <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+    <div class="location">
+      {{ .Params.joblocation }}
+    </div>
+    <h4>{{ .Description }}</h4>
+  </div>
+  <div class="summary">
+  {{ .Summary }}
+    <div class="articlesummaryfooter">
+    <a href='{{ .Permalink }}'><nobr>Learn more →</nobr></a>
+    </div>
+  </div>
+</article>

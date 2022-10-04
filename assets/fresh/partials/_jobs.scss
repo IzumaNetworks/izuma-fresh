@@ -1,0 +1,35 @@
+/* press style - for press articles 
+*/
+
+article.jobs {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	.summaryheader {
+		h2 {
+			font-weight: 600;			
+		}
+
+	}
+	.summary {
+		font-family: "Raleway", sans-serif;
+		padding: 15px;
+		max-width: 75%;
+		border: solid 1px $izuma-blue;
+	}
+}
+
+@media (max-width: 767px) {
+article.jobs {
+	max-width: 90%;
+	display: block;
+	.summary {
+		padding: 10px;
+	}
+}
+
+}
