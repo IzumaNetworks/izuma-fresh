@@ -7,28 +7,43 @@ article.jobs {
 	margin-right: auto;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	margin-bottom: 20px;
 	.summaryheader {
 		h2 {
-			font-weight: 600;			
+			font-weight: 600;
+			font-family: Poppins, sans-serif;			
 		}
-
+		.location {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			.label {
+				background: #AAA;
+				color: #FFF;
+				display: inline;
+				padding: 5px;
+				border-radius: 4px;
+			}
+		}
 	}
 	.summary {
 		font-family: "Raleway", sans-serif;
 		padding: 15px;
 		max-width: 75%;
 		border: solid 1px $izuma-blue;
+		margin-left: 15px;
 	}
 }
 
 @media (max-width: 767px) {
 article.jobs {
 	max-width: 90%;
+	flex-wrap: wrap;
 	display: block;
 	.summary {
+		max-width: 100%;
 		padding: 10px;
+		margin-left: 0;
 	}
 }
 
