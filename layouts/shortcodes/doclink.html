@@ -1,7 +1,13 @@
 {{- $link := default "/" (.Get "link") -}}
-{{- $svgobj := default "izuma-blocks-for-docs.svg" -}}
+{{- $absurl := (.Get "absurl") -}}
+{{- $svgobj := default "izuma-blocks-for-docs.svg" (.Get "svgobj") -}}
+{{- $target := "" -}}
 <div class="izdocslink-nomobile spacer"></div>
-<a href="{{ printf "https://developer.izumanetworks.com%s" $link }}" class="izdocslink">
+{{- if $absurl -}}
+<a href="{{ $absurl }}" class="izdocslink" {{- if .Get "new" }}target="_blank"{{- end -}}>
+{{- else -}}
+<a href="{{ printf "https://developer.izumanetworks.com%s" $link }}"  {{- if .Get "new" }}target="_blank"{{- end -}} class="izdocslink">
+{{- end -}}
     <object type="image/svg+xml" data="{{ printf "/images/%s" $svgobj | relURL }}"></object>
 	<div class="doclink">
 		{{ .Inner | safeHTML }}

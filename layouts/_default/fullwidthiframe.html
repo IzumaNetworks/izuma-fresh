@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "meta.html" . }}
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "css.html" . }}
+    {{ partial "izumafonts.html" . }}        
+  </head>
+  <body>
+    {{ if ne .Site.Params.preloader false }}
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
+    {{ end }}
+
+    <div class="wrapcontent">
+<!--{{ partial "single/single.html" . }} -->
+<iframe class="contentframe" width="100%" height="100%" src="{{ .Params.iframe }}">
+</iframe>
+
+<!--    {{ block "main" . }} -->
+
+<!--   {{ partial "single/single.html" . }} -->
+
+
+
+    {{ if .Params.sidebar }}
+    {{ partial "single/sidebar.html" . }}
+    {{ end }}
+
+<!--    {{ end }} -->
+    </div>
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{ partial "javascript.html" . }}
+    {{ partial "consent.html" }}    
+  </body>
+</html>
