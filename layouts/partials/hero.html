@@ -1,6 +1,9 @@
 <section class="hero is-fullheight is-default is-bold">
   {{ partial "navbar.html" . }}
   {{ partial "navbar-clone.html" . }}
+  {{ if .Site.Params.newsbanner }}
+  {{ partial "newsbanner.html" . }}
+  {{ end }}  
   {{ partial "hero-body.html" . }}
   {{ partial "hero-footer.html" . }}
 </section>
