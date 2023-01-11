@@ -51,6 +51,7 @@
       </div>
       <div class="zcolumn is-half izuma right">
         <div id="section3rightcontent" class="right-content">
+          <a id="section3rightlink" href="{{ $linkright }}" class="nodisplaylink"></a>
           <div class="iz-block"> 
             <img class="pushed-image" src="{{ printf "/images/%s" $imageright | relURL }}">            
           </div>
@@ -66,13 +67,17 @@
     </div>
 {{ if $subcontent }}    
     <script type="text/javascript">
-const leftcontent = document.querySelector("#section3leftcontent")
-const leftlink = document.querySelector('#section3leftlink')
- 
-leftcontent.addEventListener("click", handleClick)
- 
+const leftcontent = document.querySelector("#section3leftcontent");
+const leftlink = document.querySelector('#section3leftlink');
+const rightcontent = document.querySelector("#section3rightcontent");
+const rightlink = document.querySelector('#section3rightlink');
+leftcontent.addEventListener("click", handleClick);
+rightcontent.addEventListener("click", handleClick2);
 function handleClick(event) {
   leftlink.click();
-} 
+}
+function handleClick2(event) {
+  rightlink.click();
+}
     </script>
 {{ end }}

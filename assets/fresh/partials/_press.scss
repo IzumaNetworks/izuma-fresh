@@ -2,9 +2,11 @@
 */
 
 article.press {
-	max-width: 80%;
+/*	max-width: 80%; */
+	max-width: 1152px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 40px;
 	.summaryheader {
 		h2 {
 			font-weight: 600;			

@@ -57,13 +57,13 @@
         {{- if .sublinks }}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            {{ .title }}
+              {{ .title | safeHTML }}
           </a>
 
           <div class="navbar-dropdown">
             {{- range .sublinks }}
             <a href="{{ .url }}" class="navbar-item">
-              {{ .title }}
+              {{ .title | safeHTML }}
             </a>
             {{- end }}
           </div>
@@ -71,18 +71,18 @@
         {{- else if .button }}
         <a href="{{ .url }}" class="navbar-item">
           <span class="button login-btn secondary-btn raised">
-            {{ .title }}
+              {{ .title | safeHTML }}
           </span>
         </a>
         {{- else if .button2 }}
         <a href="{{ .url }}" class="navbar-item">
           <span class="button secondary-btn btn2 raised">
-            {{ .title }}
+              {{ .title | safeHTML }}
           </span>
         </a>
         {{- else }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
-          {{ .title }}
+              {{ .title | safeHTML }}
         </a>
         {{- end }}
         {{- end }}

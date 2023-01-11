@@ -1,0 +1,82 @@
+{{- $svgobj := (.Get "svgobj") -}}
+{{- $svgobj2 := (.Get "svgobj2") -}}
+{{- $image := (.Get "image") -}}
+{{- $image2 := (.Get "image2") -}}
+{{- $desc := (.Get "desc") -}}
+{{- $anchor := (.Get "anchor") -}}
+{{- $height := default "auto" (.Get "height") -}}
+{{- $maxwidth := default "100%" (.Get "maxwidth") -}}
+{{- $mobilemaxwidth := default "100%" (.Get "mobilemaxwidth") -}}
+<!-- mobile is an optional alternate version for phone displat -->
+{{- $mobile := default $svgobj (.Get "mobile") -}}
+{{ if $image }}
+{{ $mobile := default $image (.Get "mobile") }}
+{{ end }}
+{{- $mobile2 := default $svgobj (.Get "mobile2") -}}
+{{ if $image2 }}
+{{- $mobile2 := default $image2 (.Get "mobile2") -}}
+{{ end }}
+<!-- the if statements dont seem to ALWAYS work in Hugo right now - restart hugo if in development mode -->
+<!-- the issues is filed and the community seems to be unconcerned -->
+<!-- {{ $mobile := $image }}
+{{ $mobile2 := $image2 }}
+ -->
+<!-- https://stackoverflow.com/questions/644896/how-do-i-scale-a-stubborn-svg-embedded-with-the-object-tag -->
+<div class="izfigwrapwide block{{ .Get "block"}}">
+	{{ with $anchor }}
+		<a class="titleanchor" id="{{ . }}"></a>
+	{{ end }}
+	<div class="izfigsidebyside">
+		<div class="desktop">
+		<div class="left-side">
+			<figure>
+			{{ if $svgobj }}
+	        <object style="height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="height:{{ $height }};" src="{{ printf "%s" $image | relURL }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+		</div>
+		<div class="right-side">
+			<figure>
+			{{ if $svgobj2 }}
+	        <object style="height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image2 }}
+	        <img style="height:{{ $height }};" src="{{ printf "%s"  $image2 | relURL }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+		</div>
+
+	<!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
+		</div>
+		<div class="mobile">
+			<div class="top-side">
+				<figure>
+				{{ if $svgobj }}
+		        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj | relURL }}" alt="{{ $desc }}"></object>
+				{{ end }}
+				{{ if $image }}
+		        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile | relURL }}" alt="{{ $desc }}" />
+				{{ end }}		
+				</figure>
+			</div>
+			<div class="bottom-side">
+				<figure>
+				{{ if $svgobj2 }}
+		        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc }}"></object>
+				{{ end }}
+				{{ if $image2 }}
+		        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile2 | relURL }}" alt="{{ $desc }}" />
+				{{ end }}		
+				</figure>
+			</div>
+		</div>
+	</div>
+	{{ with .Inner }}
+	<div class="caption">
+		{{ .Inner | safeHTML }}
+	</div>
+	{{ end }}
+</div>

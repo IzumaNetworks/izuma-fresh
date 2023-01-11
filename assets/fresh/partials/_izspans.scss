@@ -1,3 +1,9 @@
+.content {
+    hr {
+        background-color: #7cabdb;
+    }
+}
+
 span.iz-callout {
 	color: $izuma-blue;
 	font-weight: 500;
@@ -9,4 +15,99 @@ a.titleanchor {
     position: relative;
     top: -100px;
     visibility: hidden;
+}
+
+a.titleanchormore {
+    display: block;
+    position: relative;
+    top: -200px;
+    visibility: hidden;
+}
+
+
+.title.is-4.izbar {
+    padding: 15px;
+    margin-left: -0.8rem;
+    background: #CCC;
+}
+
+.title.is-5.izbar {
+    padding: 15px;
+    margin-left: -0.8rem;
+    background: #CCC;
+}
+
+.izbar-graphic {
+    background: #CCC;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    position: absolute;
+    margin-left: 0;
+    height: 100%;
+    left: -132px;
+    width: 120px;
+}
+
+.izbar-graphic5 {
+    background: #CCC;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    position: absolute;
+    margin-left: 0;
+    height: 100%;
+    left: -132px;
+    width: 120px;
+}
+
+.izbar-wrapper {
+    position: relative;
+}
+
+
+.izbar-graphic.izblue {
+    background: $izuma-blue;
+    color: #FFF;
+}
+
+.izbar-graphic5.izblue {
+    background: $izuma-blue;
+    color: #FFF;
+}
+
+.title.is-4.izbar.izblue {
+    background: $izuma-blue;
+    color: #FFF;
+}
+
+.title.is-5.izbar.izblue {
+    background: $izuma-blue;
+    color: #FFF;
+}
+
+.izbar-graphic.izorange {
+    background: $izuma-orange;
+    color: #000;
+}
+
+.izbar-graphic5.izorange {
+    background: $izuma-orange;
+    color: #000;
+}
+
+.title.is-4.izbar.izorange {
+    background: $izuma-orange;
+    color: #000;
+}
+
+.title.is-5.izbar.izorange {
+    background: $izuma-orange;
+    color: #000;
+}
+
+
+// some table stuff
+
+table {
+    thead {
+background: #d1e2fd;
+font-weight: 700;
+    }
 }

@@ -1,0 +1,62 @@
+{{ $caroid := .Get "caroid" }}
+{{ $anchor := .Get "anchor" }}
+
+<a class="titleanchormore" id="{{ $anchor }}"></a> <!-- can be used to go to the carousel -->
+        <div id="caro-{{ $caroid }}" class="iz-carousel iz-carousel-desktop">
+			{{ range ( index .Page.Params $caroid ) }}
+			<input type="radio" name="slides" checked="{{ with .checked }}checked{{ end }}" id="{{ $caroid }}-{{ .id }}">
+
+			{{ end }}
+
+            <ul class="iz-carousel__thumbnails">
+			{{ range ( index .Page.Params $caroid ) }}
+                <li>
+                	<div class="caro-thumb-li">
+
+
+                    <label for="{{ $caroid }}-{{ .id }}">
+                    	<h1>{{ safeHTML .title }}</h1>
+                    	<img src="{{ relURL .icon }}" alt="">
+                    </label>
+                </div>
+                </li>
+			{{ end }}
+			</ul>    
+            <ul class="iz-carousel__slides">
+            	{{ .Inner }}
+            </ul>    
+        </div>
+
+
+
+
+           <div class="iz-carousel-mobile">
+           	<b>Tap each icon to learn more...</b>
+           </div>
+           <div id="caro-{{ $caroid }}-m" class="iz-carousel iz-carousel-mobile">
+
+			{{ range ( index .Page.Params $caroid ) }}
+			<input type="radio" name="slides" checked="{{ with .checked }}checked{{ end }}" id="{{ $caroid }}-{{ .id }}-m">
+			{{ end }}
+
+            <ul class="iz-carousel__thumbnails">
+			{{ range ( index .Page.Params $caroid ) }}
+                <li>
+                    <label for="{{ $caroid }}-{{ .id }}-m">
+                    		<img src="{{ relURL .icon }}" alt="{{ .title }} icon">
+                    </label>
+                </li>
+			{{ end }}
+            </ul>    
+            <ul class="iz-carousel__slides">
+            	{{ .Inner }}
+            </ul>    
+        </div>
+
+
+
+
+
+
+
+        

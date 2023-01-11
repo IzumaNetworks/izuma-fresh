@@ -297,11 +297,104 @@
 				height: 100%;
 				background-size: cover;
 				background-position: center;
+	.caption
+		background: #ececec;
+		text-align: center;
+		font-size: 0.85rem;
+		border-top: solid gray 1px;
+		padding: 2px;
+	.izfigsidebyside
+		.mobile
+			display: none;
+			.top-side
+				display: inline;
+				width: 100%;
+				figure
+					touch-action: manipulation;
+					width: 100%
+					display: inline-block;
+					padding: 0;
+					margin: 0;					
+					margin-bottom: 5px;
+					position: relative
+					.image
+						display: block;
+						position: relative;
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+						background-position: center;
+					&:hover
+						-webkit-transform: scale(1.2);
+						transform: scale(1.2);
+			.bottom-side
+				width: 100%;
+				display: inline;
+				figure
+					touch-action: manipulation;
+					width: 100%
+					padding-left: 5px;
+					display: inline-block;
+					padding: 0;
+					margin: 0;
+					margin-bottom: 5px;
+					position: relative
+					.image
+						display: block;
+						position: relative;
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+						background-position: center;
+					&:hover
+						-webkit-transform: scale(1.2);
+						transform: scale(1.2);
+		.desktop
+			white-space: nowrap;
+			.left-side
+				display: inline-block;
+				width: calc(50% - 10px);
+				figure
+					width: 100%
+					display: inline-block;
+					padding-right: 5px;
+					margin: 0;
+					position: relative
+					.image
+						display: block;
+						position: relative;
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+						background-position: center;
+			.right-side
+				width: calc(50% - 10px);
+				display: inline-block;
+				figure
+					width: 100%
+					padding-left: 5px;
+					display: inline-block;
+					margin: 0;
+					position: relative
+					.image
+						display: block;
+						position: relative;
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+						background-position: center;
+
+
 
 
 @media (max-width: 767px)
 	.izfigwrapwide
 		.izfigwide
+			.mobile
+				display: inline;
+			.desktop
+				display: none;
+		.izfigsidebyside
 			.mobile
 				display: inline;
 			.desktop

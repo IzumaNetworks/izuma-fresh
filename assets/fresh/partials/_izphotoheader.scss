@@ -1,0 +1,233 @@
+.bg-photo-header {
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	overflow: none;
+	background-size: cover;
+	background-position: center;
+	padding-top: 100px;
+	position: relative;
+	min-height: 225px;
+
+	.photo-bg-bar {
+		background-color: rgba(18, 84, 179, 0.64);
+		width: 100%;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		position: absolute;
+		bottom: 0;
+	}
+
+	h1 {
+		font-family: "Poppins", sans-serif;
+		font-weight: 600;
+		margin: 0 auto;
+		margin-right: auto;
+		margin-left: auto;
+		color: #FFF;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	h5 {
+		margin: 0 auto;
+		margin-right: auto;
+		margin-left: auto;
+		color: #FFF;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+
+}
+
+
+$right-bar-wide: 50px;
+$overlay-wide: 50px;
+
+.bg-photo-right-wrapper {
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	overflow: none;
+	background-size: cover;
+	background-position: center;
+//	padding-top: 100px;
+	position: relative;
+	min-height: 225px;
+
+	.bg-photo-right {
+		overflow: none;
+		background-size: cover;
+		background-position: center;		
+		-webkit-mask-image: url(/images/big-grid-mask-fade.png);
+		mask-image: url(/images/big-grid-mask-fade.png);
+		-webkit-mask-size: cover;
+		mask-size: cover;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+	}
+
+	.decorator-wrapper {
+		margin: 0 auto;		
+		margin-right: auto;
+		margin-left: auto;		
+	}
+
+	.left-decorator-bar {
+		width: $right-bar-wide;
+		background: yellow;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		display: none;
+	}
+	.right-overlay-bar {
+		width: 100%;
+		background: yellow;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		mix-blend-mode: multiply;
+	}
+
+	.left-title-bar {
+//		background-color: rgba(18, 84, 179, 0.64);
+		width: 100%;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		position: absolute;
+		top: 50%;
+		margin: 0;
+		transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+	}
+
+	h1 {
+		font-family: "Poppins", sans-serif;
+		font-weight: 600;
+		margin: 0;
+		color: #FFF;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	h5 {
+		margin: 0;
+		color: #FFF;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	.left-title-bar-mobile {
+		display: block;
+	}
+	.left-title-bar-notmobile {
+		display: none;
+	}
+
+}
+
+@media screen and (min-width: 1080px) {
+	.bg-photo-header {
+		margin-bottom: -3rem;
+	}
+	.bg-photo-right {
+		margin-left: 50%;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.bg-photo-header {
+		min-height: 175px;
+		h1 {
+			max-width: 960px;
+			width: 960px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		h5 {
+			max-width: 960px;
+			width: 960px;
+			padding-left: 0;
+			padding-right: 0;
+
+		}
+	}
+	.bg-photo-right-wrapper {
+		min-height: 175px;
+		h1 {
+			max-width: ( 960px - $right-bar-wide - 10 ) / 2;
+			width: ( 960px - $right-bar-wide - 10 ) / 2;
+			padding-left: $right-bar-wide + 10;
+			padding-right: 0;
+		}
+		h5 {
+			max-width: ( 960px - $right-bar-wide - 10 ) / 2;
+			width: ( 960px - $right-bar-wide - 10 ) / 2;
+			padding-left: $right-bar-wide + 10;
+			padding-right: 0;
+		}
+		.decorator-wrapper {
+			max-width: 960px;
+			width: 960px;
+		}
+		.left-title-bar-mobile {
+			display: none;
+		}
+		.left-title-bar-notmobile {
+			display: block;
+		}
+		.right-overlay-bar {
+			width: $overlay-wide;
+			left: 50%;
+		}
+		.left-decorator-bar {
+			display: block;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.bg-photo-header {
+		min-height: 175px;
+		h1 {
+			max-width: 1152px;
+			width: 1152px;
+			padding-left: 0;
+			padding-right: 0;
+
+		}
+		h5 {
+			max-width: 1152px;
+			width: 1152px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.bg-photo-right-wrapper {
+		min-height: 175px;
+		h1 {
+			max-width: ( 1152px - $right-bar-wide - 10 ) / 2;
+			width: ( 1152px - $right-bar-wide - 10 ) / 2;
+			padding-right: 0;
+		}
+		h5 {
+			max-width: ( 1152px - $right-bar-wide - 10 ) / 2;
+			width: ( 1152px - $right-bar-wide - 10 ) / 2;
+			padding-right: 0;
+		}
+		.decorator-wrapper {
+			max-width: 1152px;
+			width: 1152px;
+		}
+		.left-title-bar-mobile {
+			display: none;
+		}
+		.left-title-bar-notmobile {
+			display: block;
+		}
+
+	}
+
+}
+

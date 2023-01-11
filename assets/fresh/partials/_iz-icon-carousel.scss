@@ -1,0 +1,301 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+    
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+/*    padding-top: ($height / $width) * 100%; */
+    padding-top: 100%;
+  }
+    
+  > img {
+        position: absolute;
+        top: 20px;
+/*        left: 0;
+        right: 0;
+        bottom: 0; */
+        width: 90%;
+/*        height: 100%; */
+        height: auto;
+  }
+}
+
+
+.iz-carousel {
+	img {
+		max-width: none;
+	}
+
+    display: block;
+    text-align: left;
+    position: relative;
+    margin-bottom: 22px;
+    
+    > input {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        
+        &:nth-of-type(6):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: -500%; }
+        &:nth-of-type(5):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: -400%; }
+        &:nth-of-type(4):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: -300%; }
+        &:nth-of-type(3):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: -200%; }
+        &:nth-of-type(2):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: -100%; }
+        &:nth-of-type(1):checked ~ .iz-carousel__slides .iz-carousel__slide:first-of-type { margin-left: 0%; }
+        
+        &:nth-of-type(1):checked ~ .iz-carousel__thumbnails li:nth-of-type(1) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+        &:nth-of-type(2):checked ~ .iz-carousel__thumbnails li:nth-of-type(2) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+        &:nth-of-type(3):checked ~ .iz-carousel__thumbnails li:nth-of-type(3) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+        &:nth-of-type(4):checked ~ .iz-carousel__thumbnails li:nth-of-type(4) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+        &:nth-of-type(5):checked ~ .iz-carousel__thumbnails li:nth-of-type(5) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+        &:nth-of-type(6):checked ~ .iz-carousel__thumbnails li:nth-of-type(6) { background: rgba(0,0,0,0.15); box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15); }
+    }
+
+    h1 {
+    	text-align: left;
+		font-size: 2rem;
+		font-family: "Poppins", Helvetica, sans-serif;    	
+    }
+}
+
+.iz-carousel__slides {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.iz-carousel__slide {
+    position: relative;
+    display: block;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+    vertical-align: top;
+    box-sizing: border-box;
+    white-space: normal;
+
+    border: solid #DDD 10px;
+	padding: 15px;
+	border-radius: 10px;
+    
+    figure {
+        display: flex;
+        margin: 0;
+    }
+    
+    div {
+        @include aspect-ratio(3, 2);
+        width: 50%;
+	    img {
+	        display: block;
+	        flex: 1 1 auto;
+	        object-fit: cover;
+	    }
+
+    }
+    
+
+    
+    figcaption {
+        align-self: flex-start;
+        padding: 20px 20px 0 20px;
+        flex: 0 0 auto;
+        width: 50%;
+        min-width: 150px;
+        font-style: normal !important;
+        text-align: left;
+
+        h1 {
+        	font-size: 2rem;
+        	font-family: "Poppins", Helvetica, sans-serif;
+        }
+    }
+    
+    .credit {
+        margin-top: 1rem;
+        color: rgba(0, 0, 0, 0.5);
+        display: block;        
+    }
+    
+    &.scrollable {
+        overflow-y: scroll;
+    }
+}
+
+
+.iz-carousel__thumbnails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+    margin: 0 -10px;
+    
+    .iz-carousel__slides + & {
+        margin-top: 20px;
+    }
+    
+    li {        
+		list-style-type: none;
+        flex: 1 1 auto;
+        max-width: calc((100% / 6) - 100px);  
+        margin: 0 10px;
+        transition: all 300ms ease-in-out;
+		align-items: end;
+		display: flex;    
+		padding-left: 5px;
+		padding-right: 5px;		    
+    }
+ 
+	.caro-thumb-li {
+		height: 100%;
+	}
+
+    h1 {
+		font-size: 0.8rem;
+		font-family: "Poppins", Helvetica, sans-serif;
+		text-align: center;
+		font-weight: 500;
+
+		height: 4rem;
+		vertical-align: middle;
+		display: table-cell;
+		text-align: center;
+    }
+
+    label {
+    	text-align: center;
+        display: block;
+        margin-left: -4px;
+//        @include aspect-ratio(1,1);
+//        border: gray solid 1px;
+                  
+        // &:hover,
+        // &:focus {
+        //     cursor: pointer;
+            
+        //     img {
+        //         box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.25);
+        //         transition: all 300ms ease-in-out;
+        //     }
+        // }
+
+
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        max-width: 90px;
+    }
+    // img:hover {
+	// 	box-shadow: none !important;
+    // }
+}
+
+
+
+
+// MOBILE version
+
+
+@media (min-width: 768px) {
+	.iz-carousel-desktop {
+		display: block;
+	}
+
+	.iz-carousel-mobile {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.iz-carousel-mobile {
+		display: block;
+	}
+
+	.iz-carousel-desktop {
+		display: none;
+	}
+
+	.iz-carousel__slide figcaption {
+		width: 100%;
+	}
+
+	.iz-carousel__slide div {
+		width: 100%;
+	}
+
+	.iz-carousel-mobile.iz-carousel {
+		margin-left: -50px;
+		margin-right: -20px;
+	}
+
+	.iz-carousel__slide {
+		border: none;
+
+		figure {
+			display: block;
+		}
+
+		figcaption {
+			padding: 0;
+		}
+	}
+
+	.iz-carousel__slide div > img {
+		top: 10px;
+        touch-action: manipulation;
+	}
+	.iz-carousel__slide div > img:hover {
+		width: 111%;
+		margin-left: -6%;
+		border: 1px solid gray;
+	}
+
+
+	.iz-carousel-popup {
+		display: none;
+
+		background: #FFF;
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 1em;
+
+	}
+
+	.iz-carousel__thumbnails {
+	    li {        
+	        max-width: calc((100% / 6) - 25px);  
+	        padding: 0;
+	    }    
+	    label {
+	        h1 {
+	        	display: none;
+	        }
+	    }	    
+	}
+}
+
+
+
+

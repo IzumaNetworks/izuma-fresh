@@ -1,0 +1,7 @@
+<div class="izbar-wrapper">
+{{ with .Get 1 }}
+<a class="titleanchor" id="{{ . }}"></a>
+{{ end }}
+<div class="izbar-graphic5 {{ with .Get 2 }}{{ . }}{{ end }}"></div>
+<h5 class="title is-5 izbar {{ with .Get 2 }}{{ . }}{{ end }}">{{ .Get 0 | safeHTML }}</h4>
+</div>

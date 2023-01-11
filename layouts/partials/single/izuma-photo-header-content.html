@@ -1,0 +1,21 @@
+{{ $bg := .Params.bgheaderimage }}
+{{ $barcolor := .Params.bgbarcolor }}
+<div class="bg-photo-header" style="background-image: url({{ printf "%s" ( $bg ) }}); {{  with .Params.bgbarminheight }}min-height: {{.}}; {{ end }}">
+        <div class="photo-bg-bar" {{ with .Params.bgbarcolor }} style="background-color: rgba({{ . }});" {{ end }}>       
+        <h1 class="title section-title">{{ .Title }}</h1>        
+        <h5 class="subtitle is-5 is-muted">{{ .Params.Subtitle }}</h5>
+      </div>
+</div> 
+<section class="section is-medium">
+  <div class="container">
+    <div class="columnz">
+      <div class="zcolumn is-centered-tablet-portrait">
+
+      </div>
+    </div>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>

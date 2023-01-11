@@ -10,6 +10,7 @@
 		-webkit-clip-path: polygon(0% 0%, 100% 0%, 90% 0%, 100% 20%, 100% 100%, 10% 100%, 0% 80%, 0% 0%);
 		clip-path: polygon(0% 0%, 100% 0%, 90% 0%, 100% 20%, 100% 100%, 10% 100%, 0% 80%, 0% 0%);
 		color: #FFF;
+        max-width: 100%;
     }
     &.cta {
         font-family: 'Poppins', sans-serif;
@@ -68,6 +69,9 @@
 }
 
 @media screen and (max-width: 1087px) {
+    .button.cta  {
+        white-space: normal;
+    }
     .navbar-item {
         .button {
             &.login-btn {

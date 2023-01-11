@@ -1,0 +1,24 @@
+<!-- icon-entry -->
+<!-- {{ .Parent.Scratch.Add "count" (int 1) }} -->
+{{ $cid := .Parent.Get "caroid" }}
+{{ $id := .Get "id" }}
+{{ $img := .Get "img" }}
+{{ $title := safeHTML ( .Get "title" ) }}
+<li class="iz-carousel__slide">
+    <figure>
+    	<h1 class="iz-carousel-mobile">
+    		{{ safeHTML $title }}
+    	</h1>
+        <div>
+            <img src="{{ $img }}" alt="image for {{ $title }}">
+        </div>
+        <figcaption>
+        	<h1 class="iz-carousel-desktop">{{ safeHTML $title }}</h1>
+        	{{ .Inner }}
+        </figcaption>
+    </figure>
+</li>
+
+
+
+
