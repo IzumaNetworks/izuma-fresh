@@ -1,0 +1,49 @@
+{{- $svgobj := (.Get "svgobj") -}}
+{{- $image := (.Get "image") -}}
+{{- $desc := (.Get "desc") -}}
+{{- $anchor := (.Get "anchor") -}}
+{{- $height := default "auto" (.Get "height") -}}
+{{- $divheight := default "auto" (.Get "divheight") -}}
+{{- $maxwidth := default "100%" (.Get "maxwidth") -}}
+{{- $mobilemaxwidth := default "100%" (.Get "mobilemaxwidth") -}}
+<!-- mobile is an optional alternate version for phone displat -->
+{{- $mobile := default $svgobj (.Get "mobile") -}}
+{{ if $image }}
+{{- $mobile := default $image (.Get "mobile") -}}
+{{ end}}
+
+<div class="izfigouterwrap mobile">
+<div class="izfigwrapleft piconly block{{ .Get "block"}}">
+	<div class="izfigleft piconly">
+		<div class="mobile">
+			<figure class="piconly">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobile | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $image | relURL }}" alt="{{ $desc }}" />
+			{{ end }}			
+			</figure>
+		</div>
+	</div>
+</div>
+{{ .Inner | safeHTML }}
+</div>
+
+<div class="izfigouterwrap desktop" style="min-height: {{ $divheight }};">
+<div class="izfigwrapleft piconly block{{ .Get "block"}}">
+	<div class="izfigleft piconly" style="min-height: {{ $divheight }};">
+		<div class="desktop">
+			<figure class="piconly">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $maxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $svgobj | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $maxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $image | relURL }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+		</div>
+	</div>
+</div>
+{{ .Inner | safeHTML }}
+</div>
