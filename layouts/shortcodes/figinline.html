@@ -1,0 +1,37 @@
+{{- $svgobj := (.Get "svgobj") -}}
+{{- $align := default "center" (.Get "alight") -}}
+{{- $image := (.Get "image") -}}
+{{- $desc := (.Get "desc") -}}
+{{- $height := default "auto" (.Get "height") -}}
+{{- $maxwidth := default "100px" (.Get "maxwidth") -}}
+{{- $mobilemaxwidth := default "100%" (.Get "mobilemaxwidth") -}}
+<!-- mobile is an optional alternate version for phone displat -->
+{{- $mobilesvg := default $svgobj (.Get "mobile") -}}
+{{- $mobileimg := default $image (.Get "mobile") -}}
+
+
+<!-- https://stackoverflow.com/questions/644896/how-do-i-scale-a-stubborn-svg-embedded-with-the-object-tag -->
+	<div class="izfiginline">
+		<div class="desktop">
+			<figure style="text-align: {{ $align }};">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $maxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $svgobj | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $maxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $image | relURL }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+	<!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
+		</div>
+		<div class="mobile">
+			<figure style="text-align: {{ $align }};">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobilesvg | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobileimg | relURL }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+	<!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
+		</div>
+	</div>

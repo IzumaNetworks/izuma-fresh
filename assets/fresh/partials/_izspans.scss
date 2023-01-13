@@ -107,7 +107,14 @@ a.titleanchormore {
 
 table {
     thead {
-background: #d1e2fd;
-font-weight: 700;
+        background: #d1e2fd;
+        font-weight: 700;
     }
+    td {
+        vertical-align: middle !important;
+    }
+    thead {
+        vertical-align: middle !important;
+    }
+
 }

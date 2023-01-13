@@ -1,5 +1,17 @@
 /* izfigs */
 
+.izfiginline
+	.desktop
+		display: inline;
+	.mobile
+		display: none;
+	figure
+		object
+			max-width: 100px;
+		img
+			max-width: 100px;
+
+
 .izfigouterwrap 
 	width: 100%;
 	border-bottom: solid 1px #BBB;
@@ -401,6 +413,11 @@
 
 
 @media (max-width: 767px)
+	.izfiginline
+		.desktop
+			display: none;
+		.mobile
+			display: inline;
 	.izfigouterwrap.mobile
 		padding-bottom: 10px;
 		display: block;
