@@ -2,5 +2,5 @@
 {{- $bgcolor := .Get 1 | safeHTML -}}
 <div class="arrowcallout">
 <span class="callout" {{ with $bgcolor }}style="background-color: {{ $bgcolor }};"{{ end }}>{{ $title }}</span>&nbsp;<span class="fa-solid fa-arrow-right"></span>&nbsp;
-{{.Inner | safeHTML}}
+{{.Inner | markdownify }}
 </div>

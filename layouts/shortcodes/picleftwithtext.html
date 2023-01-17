@@ -27,7 +27,7 @@
 		</div>
 	</div>
 </div>
-{{ .Inner | safeHTML }}
+{{ .Inner | markdownify }}
 </div>
 
 <div class="izfigouterwrap desktop" style="min-height: {{ $divheight }};">
@@ -45,5 +45,5 @@
 		</div>
 	</div>
 </div>
-{{ .Inner | safeHTML }}
+{{ .Inner | markdownify }}
 </div>
