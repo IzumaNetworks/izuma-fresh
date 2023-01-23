@@ -67,6 +67,10 @@ a.titleanchormore {
     color: #FFF;
 }
 
+.title.is-5.whitetxt {    
+    color: #FFF !important;        
+}
+
 .izbar-graphic5.izblue {
     background: $izuma-blue;
     color: #FFF;
@@ -92,14 +96,29 @@ a.titleanchormore {
     color: #000;
 }
 
+.izbar-graphic5.izcobalt {
+    background: $izuma-cobalt;
+    color: #FFF;
+}
+
 .title.is-4.izbar.izorange {
     background: $izuma-orange;
+    color: #000;
+}
+
+.title.is-4.izbar.izcobalt {
+    background: $izuma-cobalt;
     color: #000;
 }
 
 .title.is-5.izbar.izorange {
     background: $izuma-orange;
     color: #000;
+}
+
+.title.is-5.izbar.izcobalt {
+    background: $izuma-cobalt;
+    color: #FFF;
 }
 
 

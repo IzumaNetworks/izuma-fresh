@@ -79,6 +79,14 @@
 		width: 30%;
 	&.block50
 		width: 50%;
+	&.block45
+		width: 45%;
+	&.block45nomargins
+		width: 45%;
+		margin: 0;
+	&.block50nomargins
+		width: 50%;
+		margin: 0;
 	&.block60
 		width: 60%;		
 	&.block70
@@ -321,6 +329,12 @@
 	.izfigwide
 		.mobile
 			display: none;
+			figure
+				margin-left: 0;
+				margin-right: 0;
+				&:hover
+					width: 100%;
+					transform: translate(-5%);
 		.desktop
 			display: inline;
 		figure
@@ -458,6 +472,12 @@
 		float: none;
 		width: 100%;
 		&.block30
+			width: 100%;
+		&.block45
+			width: 100%;
+		&.block45nomargins
+			width: 100%;
+		&.block50nomargins
 			width: 100%;
 		&.block50
 			width: 100%;
