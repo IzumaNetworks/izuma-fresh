@@ -180,6 +180,14 @@
 		background: none;
 	background: $izuma-blue;
 	margin: 1rem 0 2rem 2rem;
+	&.block10
+		width: 10%;
+	&.block20
+		width: 20%;
+	&.block15
+		width: 15%;
+	&.block25
+		width: 25%;
 	&.block30
 		width: 30%;
 	&.block50
@@ -197,6 +205,12 @@
 	table
 		thead
 			background: rgba(0, 0, 0, 0.15)
+	.caption
+		background: #ececec;
+		text-align: center;
+		font-size: 0.85rem;
+		border-top: solid gray 1px;
+		padding: 2px;
 	.overlay
 		position: relative;
 		height: 100%;
@@ -517,15 +531,25 @@
 				width: calc(100% - 10px);
 				left: 10px;
 	.izfigwrapright
-		.mobile
-			display: inline;
-		.desktop
-			display: none;	
+		.izfigright
+			.mobile
+				display: inline;
+			.desktop
+				display: none;	
 		position: relative;
 		padding: 0;
 		float: none;
-		width: 100%;
-		margin: 1rem 2rem 1rem 0;
+		width: 100%
+		margin-left: auto;
+		margin-right: auto;
+		&.block10
+			width: 100%;
+		&.block20
+			width: 100%;
+		&.block15
+			width: 100%;
+		&.block25
+			width: 100%;
 		&.block30
 			width: 100%;
 		&.block50
