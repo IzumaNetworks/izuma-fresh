@@ -3,12 +3,16 @@
 
 {{- with .Parent -}}
 <li><span class="fa-solid fa-arrow-right"></span>
+<div class="shifted">
 &nbsp;{{$li | safeHTML}}
+</div>
 </li>
 {{- else -}}
 <ul class="arrowlist">
 <li><span class="fa-solid fa-arrow-right"></span>
+<div class="shifted">
 &nbsp;{{$li | safeHTML}}
+</div>
 </li>
 </ul>
 {{- end -}}

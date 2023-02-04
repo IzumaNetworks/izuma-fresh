@@ -1,0 +1,7 @@
+{{- $link := default "/" (.Get 0 ) -}}
+{{- $bgcolor := ( .Get 1 ) -}}
+<a class="button cta-small izumaparallel raised" href="{{ $link }}" {{ with $bgcolor }}style="background-color: rgb({{ $bgcolor }});"{{ end }}>
+		{{ .Inner | safeHTML }}
+</a>
+
+
