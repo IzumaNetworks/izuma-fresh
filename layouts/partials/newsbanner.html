@@ -9,6 +9,7 @@
 {{- $bgimageright       := index $newsbanner "bgimageright" }}
 {{- $bgscale       := default "50%" (index $newsbanner "bgscale") }}
 {{- $bannerheight  := default "125px" (index $newsbanner "height") }}
+{{- $bannerheightm  := default $bannerheight (index $newsbanner "mobileheight") }}
 {{- $barcolor1  := default $bgcolor (index $newsbanner "barcolor1") }}
 {{- $barcolor2  := default $bgcolor (index $newsbanner "barcolor2") }}
 {{ if .Site.Params.newsbanner }}
@@ -21,7 +22,7 @@
 		{{ $subtitle | safeHTML }}
 		</div>
 	</div>
-	<div class="container newsbannermobile" style="height: {{ $bannerheight }}; background: {{ $bgcolor }}; background-image: url(/images{{ printf "%s" $bgimageright | relURL }});">	
+	<div class="container newsbannermobile" style="height: {{ $bannerheightm }}; background: {{ $bgcolor }}; background-image: url(/images{{ printf "%s" $bgimageright | relURL }});">	 
 	</div>
 </section>
 {{ end }}
