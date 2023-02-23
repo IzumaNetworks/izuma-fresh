@@ -68,6 +68,27 @@
             {{- end }}
           </div>
         </div>
+         {{ else if .langselect }}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              {{ if eq $.Site.Language.Lang "jp" }}
+              <i class="">&#127471;&#127477;</i>
+              {{ else }}
+              <i class="">&#127482;&#127480;</i>
+              {{ end }}
+            </a>
+            <div class="navbar-dropdown">
+              {{ range $.Translations }}
+              <a href="{{ .Permalink }}" class="navbar-item">
+                {{ if eq $.Site.Language.Lang "jp" }}
+                <i class="">English&nbsp;&nbsp;&#127482;&#127480;</i>
+                {{ else }}
+                <i class="">日本&nbsp;&nbsp;&#127471;&#127477;</i>
+                {{ end }}                
+              </a>
+              {{ end}}
+            </div>
+          </div>
         {{- else if .button }}
         <a href="{{ .url }}" class="navbar-item">
           <span class="button login-btn secondary-btn raised">
