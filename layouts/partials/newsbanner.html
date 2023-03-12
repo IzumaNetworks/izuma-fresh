@@ -1,10 +1,13 @@
 {{- $newsbanner        := .Site.Params.newsbanner }}
 {{- $title       := index $newsbanner "title" }}
+{{- $mobiletitle       := index $newsbanner "mobiletitle" }}
 {{- $subtitle       := index $newsbanner "subtitle" }}
 {{- $bgcolor       := default "#FFF" (index $newsbanner "bgcolor") }}
+{{- $mobiletitlebgcolor       := default "#FFF" (index $newsbanner "mobiletitlebgcolor") }}
 {{- $color       := index $newsbanner "color" }}
 {{- $bgimageright       := default "none" (index $newsbanner "bgimageright") }}
 {{- $titlecolor       := default "#000" (index $newsbanner "titlecolor") }}
+{{- $mobiletitlecolor       := default "#000" (index $newsbanner "mobiletitlecolor") }}
 {{- $subtitlecolor       := default "#000" (index $newsbanner "subtitlecolor") }}
 {{- $bgimageright       := index $newsbanner "bgimageright" }}
 {{- $bgscale       := default "50%" (index $newsbanner "bgscale") }}
@@ -25,5 +28,6 @@
 	<div class="container newsbannermobile" style="height: {{ $bannerheightm }}; background: {{ $bgcolor }}; background-image: url(/images{{ printf "%s" $bgimageright | relURL }});">	 
 	</div>
 </section>
+<div class="newsbannermobiletitle" style="background: {{ $mobiletitlebgcolor }}; color: {{ $mobiletitlecolor }};">{{ $mobiletitle | safeHTML }}</div>
 {{ end }}
 
