@@ -1,0 +1,33 @@
+{{ $bg := .Params.bgheaderimage }}
+{{ $barcolor := .Params.bgbarcolor }}
+
+<div class="spacer-blog"></div>
+<div class="bg-photo-right-wrapper">
+    <div class="bg-photo-right no-overlay" style="background-image: url({{ printf "%s" ( $bg ) }}); {{  with .Params.bgbarminheight }}min-height: {{.}}; {{ end }}">
+    </div>
+      <div class="decorator-wrapper">
+        <div class="left-decorator-bar-slim" {{ with .Params.bgbarcolor }} style="background-color: rgba({{ . }});" {{ end }}></div>
+        <div class="left-title-bar" >              
+            <h1 class="wide title section-title left-title-bar-notmobile" {{ with .Params.bgbarcolor }} style="color: rgba({{ . }});" {{ end }}>{{ .Title }}</h1>        
+            <h5 class="wide subtitle is-5 is-muted left-title-bar-notmobile" {{ with .Params.bgbarcolor }} style="color: rgba({{ . }});" {{ end }}>{{ .Params.Subtitle }}</h5>
+            <h1 class="wide no-overlay title section-title left-title-bar-mobile" {{ with .Params.bgbarcolor }} style="color: rgba({{ . }});" {{ end }}>{{ .Title }}</h1>        
+            <h5 class="wide no-overlay subtitle is-5 is-muted left-title-bar-mobile" {{ with .Params.bgbarcolor }} style="color: rgba({{ . }});" {{ end }}>{{ .Params.Subtitle }}</h5>
+        </div>
+
+      </div>
+
+</div> 
+<section class="section">
+  <div class="container">
+    <div class="columnz">
+      <div class="zcolumn is-centered-tablet-portrait">
+
+      </div>
+    </div>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+

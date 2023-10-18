@@ -4,6 +4,6 @@
 <!--		<figcaption>{{ .Get "caption" }}</figcaption> -->
 	</div>
 	<div class="overlay w{{ .Get "width"}}">
-		{{ .Inner | safeHTML }}
+		{{ .Inner | markdownify }}
 	</div>
 </div>

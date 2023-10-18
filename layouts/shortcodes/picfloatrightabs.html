@@ -1,0 +1,46 @@
+{{- $svgobj := (.Get "svgobj") -}}
+{{- $image := (.Get "image") -}}
+{{- $desc := (.Get "desc") -}}
+{{- $anchor := (.Get "anchor") -}}
+{{- $caption := .Get "caption" -}}
+{{- $height := default "auto" (.Get "height") -}}
+{{- $maxwidth := default "100%" (.Get "maxwidth") -}}
+{{- $mobilemaxwidth := default "100%" (.Get "mobilemaxwidth") -}}
+<!-- mobile is an optional alternate version for phone displat -->
+{{- $mobile := default $svgobj (.Get "mobile") -}}
+{{ if $image }}
+{{- $mobile := default $image (.Get "mobile") -}}
+{{ end}}
+
+<div class="izfigwrapright piconly block{{ .Get "block"}}">
+	{{ with $anchor }}
+		<a class="titleanchor" id="{{ . }}"></a>
+	{{ end }}
+	<div class="izfigright piconly">
+		<div class="desktop">
+			<figure class="piconly">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $maxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" ( path.Dir .Page.RelPermalink ) $svgobj | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $maxwidth }};height:{{ $height }};" src="{{ printf "%s" $image }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+		</div>
+		<div class="mobile">
+			<figure class="piconly">
+			{{ if $svgobj }}
+	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $mobile | relURL }}" alt="{{ $desc }}"></object>
+			{{ end }}
+			{{ if $image }}
+	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile }}" alt="{{ $desc }}" />
+			{{ end }}		
+			</figure>
+		</div>
+	</div>
+	{{ if $caption }}
+	<div class="caption">
+		{{ $caption | safeHTML }}
+	</div>
+	{{ end }}
+</div>
