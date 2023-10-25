@@ -76,7 +76,7 @@
 	</div>
 	{{ with .Inner }}
 	<div class="caption">
-		{{ .Inner | safeHTML }}
+		{{ . | markdownify }}
 	</div>
 	{{ end }}
 </div>

@@ -2,5 +2,5 @@
 {{ with .Get 1 }}
 <a class="titleanchor" id="{{ . }}"></a>
 {{ end }}
-<h4 class="title is-4">{{ .Get 0 | safeHTML }}</h4>
+<h4 class="title is-4" style="{{ .Get 2 | safeHTML }}">{{ .Get 0 | markdownify }}</h4>
 </div>
