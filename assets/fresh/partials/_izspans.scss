@@ -17,13 +17,25 @@ a.titleanchor {
     visibility: hidden;
 }
 
+span.izanchor {
+    position: relative;
+    top: -100px;    
+}
+
+div.titleanchormore {
+    display: block;
+    position: relative;
+    top: -200px;
+    visibility: hidden;
+    height: 0;
+}
+
 a.titleanchormore {
     display: block;
     position: relative;
     top: -200px;
     visibility: hidden;
 }
-
 
 .title.is-4.izbar {
     padding: 15px;

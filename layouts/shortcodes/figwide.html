@@ -13,9 +13,9 @@
 
 <!-- https://stackoverflow.com/questions/644896/how-do-i-scale-a-stubborn-svg-embedded-with-the-object-tag -->
 <div class="izfigwrapwide block{{ .Get "block"}}">
-	{{ with $anchor }}
-		<a class="titleanchor" id="{{ . }}"></a>
-	{{ end }}
+{{ with $anchor }}
+	<a class="titleanchor" id="{{ . }}"></a>
+{{ end }}
 	<div class="izfigwide">
 		<div class="desktop">
 			<figure>
@@ -42,7 +42,7 @@
 	</div>
 	{{ with .Inner }}
 	<div class="caption">
-		{{ . | markdownify }}
+{{ . | markdownify }}
 	</div>
 	{{ end }}
 </div>

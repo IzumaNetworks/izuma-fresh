@@ -1,0 +1,19 @@
+{{- $width := default "200%" (.Get "width") -}}
+<!-- raw html -->
+<style>
+@media (max-width: 767px) {
+	.table-wrap {
+
+	}
+	.table-wrap > table {
+		width: 200%;
+		font-size: 0.7rem;		
+	}	
+}
+</style>
+
+{{ with .Inner }}
+<div class="table-wrap" style="overflow-x: auto">
+	{{ . | markdownify }}
+</div>
+{{ end }}
