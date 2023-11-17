@@ -1,0 +1,47 @@
+{{- $width := default "110%" (.Get "width") -}}
+{{- $mobilewidth := default "200%" (.Get "mobilewidth") -}}
+{{ $randstr := substr (md5 .Inner) 0 16 }}
+{{ $oddrowcolor := .Get "oddrowcolor" }}
+{{/* (substr (base64Encode now.Unix) 0 -2) */}}
+<!-- stretch-tables.html -->
+<style>
+.table-wrap-{{ $randstr }}.mobile {
+	display: none;
+}
+.table-wrap-{{ $randstr }}.nonmobile {
+	display: block;
+}	
+.table-wrap-{{ $randstr }} > table {
+	width: {{ $width }};
+	font-size: 0.8rem;		
+}	
+
+{{ if $oddrowcolor }}
+.table-wrap-{{ $randstr }} tr:nth-child(even) {
+	background: {{ $oddrowcolor }};
+}	
+{{ end }}
+
+@media (max-width: 767px) {
+	.table-wrap-{{ $randstr }}.nonmobile {
+		display: none;
+	}
+	.table-wrap-{{ $randstr }}.mobile {
+		display: block;
+	}	
+	.table-wrap-{{ $randstr }} > table {
+		width: {{ $mobilewidth }};
+		font-size: 0.7rem;
+	}	
+}
+
+</style>
+
+{{ with .Inner }}
+<div class="table-wrap-{{ $randstr }} nonmobile" style="overflow-x: auto;">
+	{{ . | markdownify }}
+</div>
+<div class="table-wrap-{{ $randstr }} mobile" style="overflow-x: auto; ">
+	{{ . | markdownify }}
+</div>
+{{ end }}

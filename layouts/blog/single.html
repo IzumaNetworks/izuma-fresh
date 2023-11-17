@@ -1,5 +1,26 @@
 {{ define "main" }}
-    {{ partial "single/izuma-photo-right-blog.html" . }}
-    <!-- Back To Top Button -->
-    <div id="backtotop"><a href="#"></a></div>
+
+{{- $type := .Params.blogtype | default "standard-view" -}}
+
+{{- if eq $type "standard-view" -}}
+	{{- if eq .Params.blogsidebar true -}}
+	{{ partial "blog/with-sidebar.html" . }}
+	{{else}}
+	{{ partial "blog/without-sidebar.html" . }}
+	{{- end -}}
+{{- else if eq $type "cover-view" -}}
+	{{ partial "blog/with-cover.html" . }}
+{{- else if eq $type "video" -}}
+	{{ partial "blog/video-layout.html" . }}
 {{ end }}
+
+{{/*  Disqus  */}}
+{{- with .Params.DisqusShortname -}}
+<div>
+	{{ template "_internal/disqus.html" . }}
+</div>
+{{ end }}
+
+{{ end }}
+
+

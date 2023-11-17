@@ -33,7 +33,7 @@
 	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobile | relURL }}" alt="{{ $desc }}"></object>
 			{{ end }}
 			{{ if $image }}
-	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $mobile | relURL }}" alt="{{ $desc }}" />
+	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s/%s" ( path.Dir .Page.RelPermalink ) $image | relURL }}" alt="{{ $desc }}" />
 			{{ end }}		
 			</figure>
 		</div>

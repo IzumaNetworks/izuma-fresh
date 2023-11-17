@@ -1,0 +1,128 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === general ==
+
+[viewComments]
+other = "View Comments"
+
+[readMore]
+other = "Read More"
+
+[posts]
+other = "Posts"
+
+# === general ==
+
+# === defaults/taxonomy.html ===
+[allPostsforTerms]
+other = "All Posts for ... "
+
+# === defaults/terms.html ===
+[all]
+other = "All "
+
+# === category/taxonomy.html ===
+# [allPostsforCategory]
+# other = "All Posts for ... "
+
+# === category/terms.html ===
+[allPostsforCategory]
+other = "All Posts for "
+
+# === about.html ===
+# === components/author.html ===
+[about]
+other = "About "
+
+# === grid-view/list.html ===???
+[gotFeedback]
+other = "Got feedback on some my project?"
+
+# === last-post-widget.html ===
+[lastPosts]
+other = "Last Posts"
+
+[viewAll]
+other = "View All »"
+
+# === Pagination ===
+[previousPage]
+other = "Previous Page"
+
+[nextPage]
+other = "Next Page"
+# === Pagination ===
+
+# === video-layout.html ===
+[courseContents]
+other = "Course Contents"
+
+# === with-sidebar.html ===
+[comments]
+other = "0 Comments"
+
+# === shortcodes/download-files.html ===
+[download]
+other = "Download"
+
+# === shortcodes/faq.html ===
+[showHide]
+other = "Show/Hide"
+
+# === shortcodes/list-element.html ===
+[topic]
+other = "Topic"
+
+# === shortcodes/playlist.html ===
+[lessons]
+other = "Lessons"
+
+# === components ===
+
+# === components/author-sb.html ===
+# === components/author.html ===
+[moreAbout]
+other = "» More about"
+
+[aboutMe]
+other = "About Me"
+
+# === components/recent-widget.html ===
+[recentPosts]
+other = "Recent Posts"
+
+# === components/completes-mark.html ===
+[markAscompleted]
+other = "Mark as Completed"
+
+# === components/contact-form.html ===
+[name]
+other = "Name"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Subject"
+
+[message]
+other = "Type You Message Here"
+
+[send]
+other = "Send"
+
+# === components/mailchimp.html ===
+[subscribe]
+other = "Subscribe"
+
+[nospam]
+other = "🔒 No spam. Unsubscribe any time."
+
+# === components/tag-cloud.html ===
+[tagTopics]
+other = "All Tag Topics"
+
+# === toc.html ===
+[tableOfContents]
+other = "Table of Contents"

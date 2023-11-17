@@ -1,0 +1,128 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === general ==
+
+[viewComments]
+other = "Vedi Commenti"
+
+[readMore]
+other = "Leggi"
+
+[posts]
+other = "Posts"
+
+# === general ==
+
+# === defaults/taxonomy.html ===
+[allPostsforTerms]
+other = "Tutti i Post per ... "
+
+# === defaults/terms.html ===
+[all]
+other = "Tutti "
+
+# === category/taxonomy.html ===
+# [allPostsforCategory]
+# other = "All Posts for ... "
+
+# === category/terms.html ===
+[allPostsforCategory]
+other = "Tutti i Post per "
+
+# === about.html ===
+# === components/author.html ===
+[about]
+other = "About "
+
+# === grid-view/list.html ===???
+[gotFeedback]
+other = "Dammi feedback sui miei progetti"
+
+# === last-post-widget.html ===
+[lastPosts]
+other = "Ultimi Post"
+
+[viewAll]
+other = "Mostra Tutti »"
+
+# === Pagination ===
+[previousPage]
+other = "Pagina Precedente"
+
+[nextPage]
+other = "Pagina Successiva"
+# === Pagination ===
+
+# === video-layout.html ===
+[courseContents]
+other = "Contenuti Corsi"
+
+# === with-sidebar.html ===
+[comments]
+other = "0 Commenti"
+
+# === shortcodes/download-files.html ===
+[download]
+other = "Download"
+
+# === shortcodes/faq.html ===
+[showHide]
+other = "Mostra/Nascondi"
+
+# === shortcodes/list-element.html ===
+[topic]
+other = "Topic"
+
+# === shortcodes/playlist.html ===
+[lessons]
+other = "Lezioni"
+
+# === components ===
+
+# === components/author-sb.html ===
+# === components/author.html ===
+[moreAbout]
+other = "» Di più su di me"
+
+[aboutMe]
+other = "About Me"
+
+# === components/recent-widget.html ===
+[recentPosts]
+other = "Post Recenti"
+
+# === components/completes-mark.html ===
+[markAscompleted]
+other = "Segna Completato"
+
+# === components/contact-form.html ===
+[name]
+other = "Nome"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Soggetto"
+
+[message]
+other = "Scrivi il tuo messaggio qui"
+
+[send]
+other = "Invia"
+
+# === components/mailchimp.html ===
+[subscribe]
+other = "Iscriviti"
+
+[nospam]
+other = "🔒 No spam. Disiscriviti in ogni momento."
+
+# === components/tag-cloud.html ===
+[tagTopics]
+other = "Tutti Tag Topics"
+
+# === toc.html ===
+[tableOfContents]
+other = "Sommario"

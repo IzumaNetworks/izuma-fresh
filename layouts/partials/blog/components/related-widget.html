@@ -1,0 +1,156 @@
+{{- $mytags := .Params.tags }}
+{{- $posts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse -}}
+{{- $allposts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse -}}
+{{- $shownum := default 5 .Site.Params.blogAsideNumPosts }}
+{{ $num := 0 }}
+<div id="recent-posts-widget" class="card mt-0 mb-4">
+    <p class="card-header h3 text-center bg-light text-uppercase">Related Posts</p>
+
+    {{/* look for posts with same tags */}}
+    {{/* first we build a map of all pages by tag */}}
+    {{ $tagmap := dict "dummy" "dummy" }}
+
+    {{ range $allposts }}
+        {{ range .Params.tags }}
+            {{ $tagmap = merge $tagmap (dict . (slice "" ) ) }}            
+        {{ end }}
+    {{ end }}
+    {{ range $allposts }}
+        {{ $post := . }}
+        {{ range .Params.tags }}
+            {{ $thistag := index $tagmap . }}
+            {{ $thistag = append $post $thistag }}
+            {{ $tagmap = merge $tagmap (dict . $thistag) }}            
+        {{ end }}
+    {{ end }}
+    {{/* now $tagmap is a map of: Tag (key) to a (value) slice of Pages (which have that tag) */}}
+
+
+    {{/* go through the tags on _this_ posts page, and find other pages which have the same tags */}}
+    {{/* obviously, dont show the pages twice - so pages which share multiple tags will not be shown more than once */}}
+    {{ $related := dict }}
+    {{ range $mytags }}
+        {{ $pages := index $tagmap . }}
+
+        {{ range $pages }}
+            {{ if . }}
+            {{ $related = merge $related (dict .RelPermalink . ) }}           
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $shown := dict .RelPermalink "1" }}
+
+    {{ range $relurl, $post := $related }}
+    {{ if ne (index $shown .RelPermalink ) "1" }}
+    {{ $num = add 1 $num }}
+    {{ if (le $num $shownum )}}
+    {{/* if not already shown */}}
+    {{ $shown = merge $shown (dict .RelPermalink "1" )}}
+    <div class="card-body" style="max-height: 100px; border-bottom: 1px solid rgba(0,0,0,.125)">
+        <div class="row" >
+            {{ $pic := "" }}
+            {{ if $post.Params.resources }}
+            {{- $look := where $post.Params.resources "name" "featured-image" -}}
+                {{ if $look }}
+                    {{ $pic = index $look 0 "src" }}
+                {{ end }}
+            {{ end }}
+            {{- $type := $post.Params.type | default "standard-view" -}}
+            {{ if $pic }}
+            {{ end }}
+
+            <div class="col-3 align-items-start thumbnail-view">
+                {{- if $pic }}
+                    <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="text-muted thumbnail-pic">
+                        <img src="{{ .RelPermalink }}{{$pic}}" class="thumbnail-pic">
+                    </a>
+                {{- else -}}
+                    {{- if eq $type "video" -}}
+                    <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="text-muted thumbnail-pic">
+                        <i class="fa fa-film fa-3x fa-fw text-center w-100 thumbnail-pic"></i>
+                    </a>
+                    {{else}}
+                    <a href="{{ .RelPermalink }}" alt="text-post" class="text-muted thumbnail-pic">
+                        <i class="fa fa-file-text-o fa-3x fa-fw text-center w-100 thumbnail-pic"></i>
+                    </a>
+                    {{ end }}
+                {{- end -}}
+            </div>
+    
+            <div class="col-9 align-items-start thumb-text">
+                <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="card-text small text-muted w-100">
+                    <strong>{{.Title | truncate 50}}</strong></a>
+                <br>
+                    <p class="small text-muted align-items-end w-100">
+                        <span class="fa fa-clock-o" aria-hidden="true"></span>
+                        <span class="">{{ .PublishDate | time.Format .Site.Params.dateFormat }}</span>
+                    </p>
+                    {{/*  <span class="fa fa-clock-o" aria-hidden="true"></span>
+                    <span class="">{{ .PublishDate | time.Format .Site.Params.dateFormat }}</span>  */}}
+            </div>
+        </div>
+
+    </div>
+    {{ end }}
+    {{ end }}
+    {{end}}
+
+    {{/* make up the rest with recent posts */}}
+
+    {{ range $allposts }}
+    {{ if ne (index $shown .RelPermalink ) "1" }}
+    {{ $num = add 1 $num }}
+    {{ if (le $num $shownum )}}
+    {{ $shown = merge $shown (dict .RelPermalink "1" )}}
+    <div class="card-body" style="max-height: 100px; border-bottom: 1px solid rgba(0,0,0,.125)">
+        <div class="row" >
+            {{ $pic := "" }}
+            {{ if .Params.resources }}
+            {{- $look := where .Params.resources "name" "featured-image" -}}
+                {{ if $look }}
+                    {{ $pic = index $look 0 "src" }}
+                {{ end }}
+            {{ end }}
+            {{- $type := .Params.type | default "standard-view" -}}
+            {{ if $pic }}
+            {{ end }}
+
+            <div class="col-3 align-items-start thumbnail-view">
+                {{- if $pic }}
+                    <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="text-muted thumbnail-pic">
+                        <img src="{{ .RelPermalink }}{{$pic}}" class="thumbnail-pic">
+                    </a>
+                {{- else -}}
+                    {{- if eq $type "video" -}}
+                    <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="text-muted thumbnail-pic">
+                        <i class="fa fa-film fa-3x fa-fw text-center w-100 thumbnail-pic"></i>
+                    </a>
+                    {{else}}
+                    <a href="{{ .RelPermalink }}" alt="text-post" class="text-muted thumbnail-pic">
+                        <i class="fa fa-file-text-o fa-3x fa-fw text-center w-100 thumbnail-pic"></i>
+                    </a>
+                    {{ end }}
+                {{- end -}}
+            </div>
+    
+            <div class="col-9 align-items-start thumb-text">
+                <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="card-text small text-muted w-100">
+                    <strong>{{.Title | truncate 50}}</strong></a>
+                <br>
+                    <p class="small text-muted align-items-end w-100">
+                        <span class="fa fa-clock-o" aria-hidden="true"></span>
+                        <span class="">{{ .PublishDate | time.Format .Site.Params.dateFormat }}</span>
+                    </p>
+                    {{/*  <span class="fa fa-clock-o" aria-hidden="true"></span>
+                    <span class="">{{ .PublishDate | time.Format .Site.Params.dateFormat }}</span>  */}}
+            </div>
+        </div>
+
+    </div>
+    {{ end }}
+    {{ end }}
+    {{end}}
+
+
+</div>

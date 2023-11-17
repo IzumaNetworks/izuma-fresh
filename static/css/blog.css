@@ -1,0 +1,191 @@
+body {
+	font-family: source sans pro,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1.6;
+	  color: #222;
+	  text-align: left;	
+}
+
+.article-body {
+	  font-family: 'Roboto Slab', serif;;	
+}
+
+html {
+	font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: source sans pro,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  font-weight: 600;
+
+}
+
+
+h2, h3, h4, h5 {
+	border-bottom: solid #3684f5 2px;
+  	margin-top: 20px;
+  	padding-bottom: 5px;	
+}
+
+.overlay h2, h3, h4, h5 {
+	border: none;
+}
+
+.article-body ul, ol {
+	margin-left: 1rem;
+}
+
+.article-body li {
+	margin-bottom: 1rem;
+}
+
+aside .toc ul, ol {
+	margin-left: 1rem;
+}
+
+aside .toc li {
+	margin-bottom: 0;
+}
+
+.article-body ul:not(.arrowlist) li:before {    
+  font-family: 'FontAwesome';
+  content: '\f0c8';
+  margin: 0px 6px 0px -15px;
+  color: #000;
+  font-size: 0.5rem;
+  top: -3px;
+  position: relative;
+}
+
+.article-body ul:not(.arrowlist) li p {    
+	top: -1.6rem;
+  	position: relative;
+}
+
+
+
+
+.footer {
+	font-family: "Raleway", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+#toc, .toc {
+	font-family: source sans pro,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+	font-weight: 600;
+}
+
+
+.article-body .toc ul li:before {    
+  font-family: 'FontAwesome';
+  content: '\f02e';
+  margin: 0px 6px 0px -15px;
+  color: #888;
+  font-size: 0.5rem;
+  top: -2px;
+  position: relative;
+}
+
+aside .toc ul li:before {    
+  font-family: 'FontAwesome';
+  content: '\f02e';
+  margin: 0px 6px 0px -15px;
+  color: #888;
+  font-size: 0.5em;
+  top: -2px;
+  position: relative;
+}
+
+aside .thumbnail-pic img {
+  height: auto;
+  width: 33%;
+  max-height: 100px;
+  border-radius: 5px;
+  float: left;
+  margin-right:10px;
+  margin-left: 5px;
+  border: black solid 1px;
+}
+
+aside .thumbnail-pic i {
+  height: 50px;
+  width: auto;
+  border-radius: 5px;
+  float: left;
+  margin-right:20px;
+  margin-left:10px;
+}
+
+aside .thumb-text {
+  position: relative;
+  margin-top: -15px;
+  margin-bottom: auto;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+aside .thumb-text strong {
+  color: #183b6c;
+}
+
+aside .thumbnail-view {
+  padding: 10px;
+}
+
+aside .card {
+  background: #EEE;
+  border-radius: 15px;
+}
+
+aside .card-body {
+  padding: 10px;
+}
+aside p.card-header {
+  font-family: source sans pro,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px;
+}
+
+picture img {
+	border-radius: 15px;
+}
+
+.toc {
+  background: #fff4e9;
+  padding: 10px;
+  border: #e3e3e3 solid 1px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.toc .h3 {
+  margin: 0;
+  border-bottom: solid #e3e3e3 1px;
+  padding-bottom: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.article-body {
+	margin-top: 1rem;
+}
+
+.article-body .toc li {
+	margin-bottom: 0;
+}
+.article-body .toc ul {
+	margin-bottom: 0;
+}
+
+.footnotes {
+	font-size: 0.6rem;
+  line-height: 0.2rem;
+}
+
+.email-form-wrap {
+	border: #DDD solid 1px;
+    padding: 10px;
+    border-radius: 15px;
+}
+

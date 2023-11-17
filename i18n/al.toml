@@ -1,0 +1,129 @@
+# Translations for Albanian
+# Përkthime për shqip
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === general ==
+
+[viewComments]
+other = "Shiko komentet"
+
+[readMore]
+other = "Lexo më shumë"
+
+[posts]
+other = "Postimet"
+
+# === general ==
+
+# === defaults/taxonomy.html ===
+[allPostsforTerms]
+other = "Të gjitha postimet për ... "
+
+# === defaults/terms.html ===
+[all]
+other = "Të gjitha "
+
+# === category/taxonomy.html ===
+# [allPostsforCategory]
+# other = "All Posts for ... "
+
+# === category/terms.html ===
+[allPostsforCategory]
+other = "Të gjitha postimet për "
+
+# === about.html ===
+# === components/author.html ===
+[about]
+other = "About "
+
+# === grid-view/list.html ===???
+[gotFeedback]
+other = "Keni komente për disa projekte të mia?"
+
+# === last-post-widget.html ===
+[lastPosts]
+other = "Postimet e fundit"
+
+[viewAll]
+other = "Shiko te gjitha »"
+
+# === Pagination ===
+[previousPage]
+other = "Faqja e meparshme"
+
+[nextPage]
+other = "Faqja tjetër"
+# === Pagination ===
+
+# === video-layout.html ===
+[courseContents]
+other = "Përmbajtja e kursit"
+
+# === with-sidebar.html ===
+[comments]
+other = "0 komente"
+
+# === shortcodes/download-files.html ===
+[download]
+other = "Shkarko"
+
+# === shortcodes/faq.html ===
+[showHide]
+other = "Shfaq/Fshih"
+
+# === shortcodes/list-element.html ===
+[topic]
+other = "Tema"
+
+# === shortcodes/playlist.html ===
+[lessons]
+other = "Mësimet"
+
+# === components ===
+
+# === components/author-sb.html ===
+# === components/author.html ===
+[moreAbout]
+other = "» Më shumë për"
+
+[aboutMe]
+other = "About Me"
+
+# === components/recent-widget.html ===
+[recentPosts]
+other = "Postimet e fundit"
+
+# === components/completes-mark.html ===
+[markAscompleted]
+other = "Shënoni si të përfunduar"
+
+# === components/contact-form.html ===
+[name]
+other = "Emri"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Subjekti"
+
+[message]
+other = "Shkruani Mesazhin Ju këtu"
+
+[send]
+other = "Dërgo"
+
+# === components/mailchimp.html ===
+[subscribe]
+other = "Abonohu"
+
+[nospam]
+other = "🔒 No spam. Çregjistrohu në çdo kohë."
+
+# === components/tag-cloud.html ===
+[tagTopics]
+other = "Të gjitha temat e etiketave"
+
+# === toc.html ===
+[tableOfContents]
+other = "Tabela e Përmbajtjes"

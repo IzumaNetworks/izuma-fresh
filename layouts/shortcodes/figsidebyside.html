@@ -3,6 +3,7 @@
 {{- $image := (.Get "image") -}}
 {{- $image2 := (.Get "image2") -}}
 {{- $desc := (.Get "desc") -}}
+{{- $desc2 := (.Get "desc2") -}}
 {{- $anchor := (.Get "anchor") -}}
 {{- $height := default "auto" (.Get "height") -}}
 {{- $maxwidth := default "100%" (.Get "maxwidth") -}}
@@ -31,20 +32,20 @@
 		<div class="left-side">
 			<figure>
 			{{ if $svgobj }}
-	        <object style="height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj | relURL }}" alt="{{ $desc }}"></object>
+	        <object style="max-height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj | relURL }}" alt="{{ $desc }}"></object>
 			{{ end }}
 			{{ if $image }}
-	        <img style="height:{{ $height }};" src="{{ printf "%s" $image | relURL }}" alt="{{ $desc }}" />
+	        <img style="max-height:{{ $height }};" src="{{ printf "%s" $image | relURL }}" alt="{{ $desc }}" />
 			{{ end }}		
 			</figure>
 		</div>
 		<div class="right-side">
 			<figure>
 			{{ if $svgobj2 }}
-	        <object style="height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc }}"></object>
+	        <object style="max-height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc2 }}"></object>
 			{{ end }}
 			{{ if $image2 }}
-	        <img style="height:{{ $height }};" src="{{ printf "%s"  $image2 | relURL }}" alt="{{ $desc }}" />
+	        <img style="max-height:{{ $height }};" src="{{ printf "%s"  $image2 | relURL }}" alt="{{ $desc2 }}" />
 			{{ end }}		
 			</figure>
 		</div>
@@ -65,10 +66,10 @@
 			<div class="bottom-side">
 				<figure>
 				{{ if $svgobj2 }}
-		        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc }}"></object>
+		        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $svgobj2 | relURL }}" alt="{{ $desc2 }}"></object>
 				{{ end }}
 				{{ if $image2 }}
-		        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile2 | relURL }}" alt="{{ $desc }}" />
+		        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile2 | relURL }}" alt="{{ $desc2 }}" />
 				{{ end }}		
 				</figure>
 			</div>

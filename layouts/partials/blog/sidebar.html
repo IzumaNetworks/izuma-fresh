@@ -1,0 +1,15 @@
+<aside class="col-md-7 col-lg-4 order-first order-last" style:="">
+	<div class="sidebar-sticky mb-3 mx-2" style="margin-top: 16px">
+		{{- partial "blog/components/author-sb.html" . -}} {{/* Author box  */}}
+		{{- partial "blog/components/yt-banner.html" . -}} {{/* YouTube Banner  */}}
+		{{/*  {{- partial "blog/components/recent-widget.html" . -}} Recent post  */}}
+		{{/*  {{- partial "blog/components/tag.html"  -}} TAG Topics  */}}
+		{{ partial "blog/components/tag-cloud.html" . }}
+		{{ with .Params.toc }}  {{/*  Table of Contents on sidebar  */}}
+		{{- partial "blog/components/toc.html" . -}}
+		{{ end }}
+		{{- partial "blog/components/hubspot-blog-email.html" . -}} {{/*  Email Subscription  */}}
+		{{/*  {{- partial "blog/components/completed-mark.html" . -}} */}}
+		{{/*  {{- partial "blog/components/adv-sd.html"  -}} ADV Image */}}
+	</div>
+</aside>
