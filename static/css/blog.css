@@ -151,6 +151,71 @@ picture img {
 	border-radius: 15px;
 }
 
+/*.bloglistview article {
+  position: relative;
+}
+
+.bloglistview article .px-0 {
+  position: relative;
+  margin-top: 2.5rem;
+}
+*/
+
+
+@media (max-width: 767px) {
+  .bloglistview article picture {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .bloglistview article {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .bloglistview article picture  {
+    margin-left: 15px;
+    margin-top: 2.5rem;
+    position: absolute;
+    display: block;
+  /*  top: 50%;
+    transform: translateY(-50%);
+  */  max-width: 90%;
+
+  /*    position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+  */
+  }
+
+
+  .bloglistview article {
+    border-bottom: #999 solid 2px;
+    background: #ECECEC;
+    margin-top: -10px;
+    min-height: 200px;
+  }
+
+
+}
+
+.bloglistview article h2 {
+  color: white;
+  border: none;
+  background: #3684f5;
+  padding: 5px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+
+
 .toc {
   background: #fff4e9;
   padding: 10px;
@@ -188,4 +253,23 @@ picture img {
     padding: 10px;
     border-radius: 15px;
 }
+
+#resultsArea .pagination {
+  margin-bottom: 20px;
+}
+
+#resultsArea .page-item {
+  background: #AAA;
+
+  padding: 10px;
+  margin-bottom 50px;
+}  
+
+#resultsArea .page-item a {
+  color: white;
+}
+
+#resultsArea .page-item.active {
+  background: #3684f5;
+}  
 

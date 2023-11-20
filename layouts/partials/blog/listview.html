@@ -1,18 +1,14 @@
 <!-- List Post Area -->
 <div class="row justify-content-center">
-    <!-- Sidebar -->
-    {{ if .Params.sidebar }}
-    {{- partial "blog/sidebar.html" . -}}
-    {{ end }}
 
     <div id="resultsArea"
-        class="{{ if not .Page.Params.sidebar }} col-md-12 col-lg-12 {{else}} col-md-11 col-lg-8 {{ end }} article">
-        {{/*  <div id="resultsArea" class="col-md-11 col-lg-8 article"></div>  */}}
+        class="{{ if not .Page.Params.sidebar }} col-md-12 col-lg-12 {{else}} col-md-11 col-lg-8 {{ end }} article bloglistview">
+        {{/*  <div id="resultsArea" class="col-md-11 col-lg-8 article"></div>  */}} 
 
-        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") (.Site.Params.paginate | default 5) }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") (.Site.Params.paginate | default 10) }}
 
         {{/*  {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }} */}}
-        <div class="container my-3">
+        <div class="my-3">
             {{ range $paginator.Pages.ByDate.Reverse }}
             {{ .Render "summary" }}
             <hr style="border: 0; border-color: #dee2e6">
@@ -22,6 +18,10 @@
             {{/*  <div class="text-muted my-0 mt-1" style="display: flex; justify-content: center;">
                             {{ partial "blog/pagination.html" . }}
         </div> */}}
+
+    </div>
+
+
 
         {{/*  Paginator style 2  */}}
         <div class="text-muted my-0 mt-1" style="display: flex; justify-content: center;">
@@ -33,5 +33,12 @@
                                 {{ template "_internal/pagination.html" . }}
     </div> */}}
 
+
+
 </div>
+    <!-- Sidebar -->
+    {{ if .Params.sidebar }}
+    {{- partial "blog/sidebar.html" . -}}
+    {{ end }}
+
 </div>
