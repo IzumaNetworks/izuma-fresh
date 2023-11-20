@@ -162,6 +162,8 @@ picture img {
 */
 
 
+
+
 @media (max-width: 767px) {
   .bloglistview article picture {
     max-width: 50%;
@@ -273,3 +275,10 @@ picture img {
   background: #3684f5;
 }  
 
+#resultsArea p.mt-1 {
+  margin-right: 10px;
+}
+
+#page-title {
+  margin-bottom: 20px;
+}

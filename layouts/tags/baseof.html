@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "meta.html" . }}
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "css.html" . }}
+    {{ partial "izumafonts.html" . }}
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.css">
+<link rel="stylesheet" type="text/css" href="/css/blog.css">
+<link rel="stylesheet" type="text/css" href="/gfonts/font.css">
+<link rel="stylesheet" type="text/css" href="/font-awesome-4.7.0/css/font-awesome.css">
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
+
+    {{ partial "navbar.html" . }}
+    {{ partial "navbar-clone.html" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+
+
+
+
+    {{ if .Site.Params.sidebar }}
+    {{ partial "sidebar2.html" . }}
+    {{ end }}
+
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
+    {{ partial "consent.html" }}    
+  </body>
+</html>

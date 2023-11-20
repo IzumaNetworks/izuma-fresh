@@ -3,7 +3,7 @@
     <p class="h4"><a class="link-unstyled" href="/tags">{{ i18n "tagTopics" }}</a></p>
 <div id="theme-tagcloud" style="margin-bottom: 10px;">
     {{ $tags := $.Site.Taxonomies.tags.ByCount }}
-    {{ $v1 := where $tags "Count" ">=" 3 }}
+    {{ $v1 := where $tags "Count" ">=" 2 }}
     {{ $v2 := where $v1 "Term" "not in" (slice "tags" "rss") }}
     {{ range $v2 }}
     {{ if .Term }}
