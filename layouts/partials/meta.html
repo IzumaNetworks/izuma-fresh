@@ -1,12 +1,14 @@
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
 {{ template "_internal/google_analytics_async.html" . }}
 {{ if eq .Site.Params.openGraph true }}
 {{ template "_internal/opengraph.html" . }}
 {{ end }}
-<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Hardcoded description; the author should update :){{ end }}" />
-<meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Hardcoded description; the author should update :){{ end }}" />
-<meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Hardcoded description; the author should update :){{ end }}" />
-<meta name="twitter:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Hardcoded description; the author should update :){{ end }}" />
-<meta charset="utf-8">
+<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Params.description }}{{ .Params.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Izuma Networks provides Edge-as-a-service and IoT solutions.{{ end }}" />
+<meta itemprop="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Params.description }}{{ .Params.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Izuma Networks provides Edge-as-a-service and IoT solutions.{{ end }}" />
+<meta property="og:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Params.description }}{{ .Params.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Izuma Networks provides Edge-as-a-service and IoT solutions.{{ end }}" />
+<meta name="twitter:description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Params.description }}{{ .Params.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Izuma Networks provides Edge-as-a-service and IoT solutions.{{ end }}" />
+
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
@@ -18,14 +20,18 @@
                img-src 'self' data: track.hubspot.com perf.hsforms.com www.googletagmanager.com forms.hsforms.com forms-na1.hsforms.com www.google.com media.licdn.com; 
                child-src izumanetworks.freshdesk.com www.google.com js.hsforms.net forms.hsforms.com;">
 
-<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
 <meta name="robots" content="index,follow" />
 <meta name="googlebot" content="index,follow" />
 
+{{ with .Keywords }}<meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">{{ end }}
 <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
 <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+
+<!-- Gives a general age rating based on the document's content -->
+<meta name="rating" content="General">
 
 <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
