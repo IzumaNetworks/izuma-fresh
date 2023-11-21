@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     {{ partial "meta.html" . }}
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ if .Title }}Izuma Networks:&nbsp;{{ .Title | markdownify }}{{ else }}{{ if .Site.Title }}{{ .Site.Title | markdownify }}{{ end }}{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}
     {{ partial "izumafonts.html" . }}
   </head>

@@ -3,8 +3,7 @@
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     {{ partial "meta.html" . }}
-
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ if .Title }}Izuma Networks Blog:&nbsp;{{ .Title | markdownify }}{{ else }}Izuma Networks Blog{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}
     {{ partial "izumafonts.html" . }}
 <link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.css">

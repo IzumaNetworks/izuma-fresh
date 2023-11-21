@@ -12,7 +12,7 @@
 	{{/*  {{"<!-- Preload -->"}}
 	<link rel="preload" as="image" href="{{ "img/theme.png" | relURL }}" /> */}}
 
-	<title>{{ .Site.Title }} | {{ .Title | markdownify }}</title>
+	<title>{{ .Title | markdownify }}</title>
 	<link rel="canonical" href="{{ .Permalink }}" />
 	<meta name="description"
 		content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Description }}{{ end }}">
