@@ -16,6 +16,10 @@
 	font-size: 0.8rem;		
 }	
 
+.table-wrap-{{ $randstr }} > table td {
+	padding: 10px;
+}	
+
 {{ if $oddrowcolor }}
 .table-wrap-{{ $randstr }} tr:nth-child(even) {
 	background: {{ $oddrowcolor }};

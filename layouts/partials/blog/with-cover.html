@@ -2,8 +2,8 @@
 <div class="container main-content">
   <div class="row justify-content-center">
     {{/*  Copertina  */}}
-    <div class="col-12 mb-2">
-      <a href="{{ .RelPermalink }}">
+    <div class="col-md-11 blogcoverhead">
+      <a href="{{ .RelPermalink }}" class="blogcoverpic">
         {{- /* Post Cover Image */ -}}
         {{ $img := (.Resources.ByType "image").GetMatch "featured-image" }}
         {{ with $img }}
@@ -15,7 +15,7 @@
     </div>
 
     {{/*  Content  */}}
-    <div class="col-md-11 col-lg-8 article">
+    <div class="col-md-11 article blogcoverview">
       <div>
         <h1>{{ .Title | markdownify }}</h1>
         <div class="container">
@@ -45,7 +45,15 @@
         <div class="article-body mb-4">
           {{ .Content }}
         </div>
-
+        <div class="coverfooterwrap">
+          <div class="coverfooter">
+            {{ partial "blog/components/related-widget.html" . }} {{/* TAG Collection  */}}
+          </div>
+          <div class="coverfooter right">
+              {{- partial "blog/components/hubspot-blog-email.html" . -}}
+          </div>          
+        </div>
+        
       </div>
     </div>
   </div>
