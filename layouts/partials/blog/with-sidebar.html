@@ -1,5 +1,6 @@
 {{/*  {{- $params := .Params | merge .Site.Params.page -}} */}}
 {{- $author := default "" .Params.author -}}
+{{- $showsubtitle := .Params.showsubtitle -}}
 <div class="container main-content">
 
     <div class="row justify-content-center">
@@ -15,6 +16,9 @@
             {{ end }}
 
             <h1>{{ .Title | markdownify }}</h1>
+            {{ if $showsubtitle }}
+            <h3 class="subtitlehead">{{ .Params.subtitle | markdownify }}</h3>
+            {{ end }}
 
             <div class="mb-0">
                 

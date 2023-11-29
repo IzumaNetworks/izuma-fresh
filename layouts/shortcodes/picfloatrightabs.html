@@ -8,9 +8,7 @@
 {{- $mobilemaxwidth := default "100%" (.Get "mobilemaxwidth") -}}
 <!-- mobile is an optional alternate version for phone displat -->
 {{- $mobile := default $svgobj (.Get "mobile") -}}
-{{ if $image }}
-{{- $mobile := default $image (.Get "mobile") -}}
-{{ end}}
+
 
 <div class="izfigwrapright piconly block{{ .Get "block"}}">
 	{{ with $anchor }}
@@ -30,11 +28,13 @@
 		<div class="mobile">
 			<figure class="piconly">
 			{{ if $svgobj }}
-	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" $mobile | relURL }}" alt="{{ $desc }}"></object>
+	        <object style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" type="image/svg+xml" data="{{ printf "%s" ( path.Dir .Page.RelPermalink ) $svgobj | relURL }}" alt="{{ $desc }}"></object>
 			{{ end }}
-			{{ if $image }}
+			{{ if $mobile }}
 	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $mobile }}" alt="{{ $desc }}" />
-			{{ end }}		
+			{{ else }}		
+	        <img style="max-width:{{ $mobilemaxwidth }};height:{{ $height }};" src="{{ printf "%s" $image }}" alt="{{ $desc }}" />
+			{{ end }}
 			</figure>
 		</div>
 	</div>
