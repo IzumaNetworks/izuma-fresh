@@ -1,0 +1,27 @@
+.asidebox {
+	display: block;
+	background: #cbdbf2;
+    color: #555;
+    border: $izuma-cobalt solid 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.asidebox .asidetitle {
+  font-weight: 600;
+  font-size: inherit;
+  font-variant: all-small-caps;
+  color: black;
+  border-bottom: black solid 1px;
+  margin-bottom: 7px;
+  margin-top: -6px;  
+}
+
+.asidebox .asidebody p code {
+	background: none;
+}
+
+.asidebox .asidebody code {
+	background: none;
+}
