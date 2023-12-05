@@ -150,9 +150,14 @@ aside p.card-header {
 }
 
 picture img {
-	border-radius: 15px;
+  border-radius: 15px;
+}
+
+.with-headerlinks picture img {
   margin-top: 20px;
 }
+
+
 
 /*.bloglistview article {
   position: relative;
