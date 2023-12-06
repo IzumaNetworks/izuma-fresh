@@ -50,10 +50,12 @@
     <div class="card-body" style="max-height: 100px; border-bottom: 1px solid rgba(0,0,0,.125)">
         <div class="row" >
             {{ $pic := "" }}
+            {{ $altpic := "" }}
             {{ if $post.Params.resources }}
             {{- $look := where $post.Params.resources "name" "featured-image" -}}
                 {{ if $look }}
                     {{ $pic = index $look 0 "src" }}
+                    {{ $altpic = index $look 0 "title" }}
                 {{ end }}
             {{ end }}
             {{- $type := $post.Params.type | default "standard-view" -}}
@@ -63,7 +65,7 @@
             <div class="col-3 align-items-start thumbnail-view">
                 {{- if $pic }}
                     <a href="{{ .RelPermalink }}" alt="{{.Title}}" class="text-muted thumbnail-pic">
-                        <img src="{{ .RelPermalink }}{{$pic}}" class="thumbnail-pic">
+                        <img src="{{ .RelPermalink }}{{$pic}}" alt="{{ $altpic }}" class="thumbnail-pic">
                     </a>
                 {{- else -}}
                     {{- if eq $type "video" -}}
