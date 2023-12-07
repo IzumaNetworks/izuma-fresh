@@ -34,10 +34,24 @@
             <div class="col pr-0 d-flex align-items-center">
               <p>
                 <span class="text-muted">
-                  <span class="mr-2"><a class="text-muted" href="{{.Params.authorLink | urlize }}"
+                  {{ if .Params.author }}
+                  <span class="mr-2"><a alt="author" class="text-muted" href="{{.Params.authorLink | urlize }}"
                       target="_blank">{{ .Params.author | markdownify }}</a></span>
                   <br>
-                  <span class="fa fa-clock-o"></span> <time>{{ .PublishDate | time.Format .Site.Params.dateFormat }}</time>
+                  {{ end }}
+                  <span title="Published" class="fa fa-clock-o"></span> <time>{{ .PublishDate | time.Format .Site.Params.dateFormat }}</time>
+{{- $pubdate := .PublishDate.Format .Site.Params.dateFormat }}
+{{- if .Lastmod }}
+    {{- $lastmod := .Lastmod.Format .Site.Params.dateFormat }}
+    {{- if ne $lastmod $pubdate }}
+            <span class="blognomobile-inlineblock">&nbsp;&nbsp;|&nbsp;&nbsp;</span><br class="blogmobile-inlineblock"><span title="Updated" class="ml-2 fa fa-pencil"></span> 
+            <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
+                {{ $lastmod }}
+            </time>
+    {{- end }}
+{{- end }}
+<br>
+            
                   {{/*  Tag list  */}}
                   {{ partial "blog/components/tag.html" . }}
                 </span>

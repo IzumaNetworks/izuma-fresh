@@ -179,6 +179,14 @@ picture img {
 }
 
 @media (max-width: 767px) {
+
+  .blognomobile-inlineblock {
+    display: none;
+  }
+  .blogmobile-inlineblock {
+    display: inline-block;
+  }
+
   .main-content {
     max-width: 100%;
   }
@@ -209,6 +217,13 @@ picture img {
 */}
 
 @media (min-width: 768px) {
+
+  .blognomobile-inlineblock {
+    display: inline-block;
+  }
+  .blogmobile-inlineblock {
+    display: none;
+  }
 
   .bloglistview article picture  {
     margin-left: 15px;
