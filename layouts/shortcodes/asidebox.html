@@ -1,7 +1,8 @@
 {{- $title := default "Note" (.Get "title") -}}
+{{- $longtitle := (.Get "longtitle") -}}
 {{- $bgcolor := default "#cbdbf2" (.Get "bgcolor") -}}
 {{- $color := (.Get "color") -}}
-<div class="asidebox" style="{{ with $bgcolor }}background-color: {{ $bgcolor }};{{ end }}{{ with $color }}color: {{ $color }};{{ end }}">
+<div {{ if $longtitle }}title="{{ $longtitle | markdownify }}"{{ end }} class="asidebox" style="{{ with $bgcolor }}background-color: {{ $bgcolor }};{{ end }}{{ with $color }}color: {{ $color }};{{ end }}">
 <div class="asidetitle">{{ $title | markdownify }}</div>
 <div class="asidebody">
 {{.Inner | markdownify }}

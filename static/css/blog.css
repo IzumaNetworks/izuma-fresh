@@ -408,3 +408,8 @@ h3.subtitlehead {
   border-left: #3684f5 solid 10px;
   padding-left: 15px;
 }
+
+.izdocslink .doclink {
+  display: inline-block;
+  margin-bottom: 10px;
+}
