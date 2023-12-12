@@ -72,6 +72,12 @@
               {{- partial "blog/components/hubspot-blog-email.html" . -}}
           </div>          
         </div>
+        {{ with .Params.nocomment }}
+        <!-- no comments -->
+        {{ else }}
+        <div id="remark42"></div>
+        <br>
+        {{ end }}
 
       </div>
     </div>

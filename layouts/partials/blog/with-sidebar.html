@@ -28,17 +28,17 @@
                     {{ end }}
                     <span title="Published" class="ml-2 fa fa-clock-o"></span> 
                     <time>{{ .PublishDate | time.Format .Site.Params.dateFormat }}</time>
-{{- $pubdate := .PublishDate.Format .Site.Params.dateFormat }}
-{{- if .Lastmod }}
-    {{- $lastmod := .Lastmod.Format .Site.Params.dateFormat }}
-    {{- if ne $lastmod $pubdate }}
-            <span class="blognomobile-inlineblock">&nbsp;&nbsp;|&nbsp;&nbsp;</span><br class="blogmobile-inlineblock"><span title="Updated" class="ml-2 fa fa-pencil"></span> 
-            <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
-                {{ $lastmod }}
-            </time>
-    {{- end }}
-{{- end }}
-<br>
+                    {{- $pubdate := .PublishDate.Format .Site.Params.dateFormat }}
+                    {{- if .Lastmod }}
+                        {{- $lastmod := .Lastmod.Format .Site.Params.dateFormat }}
+                        {{- if ne $lastmod $pubdate }}
+                                <span class="blognomobile-inlineblock">&nbsp;&nbsp;|&nbsp;&nbsp;</span><br class="blogmobile-inlineblock"><span title="Updated" class="ml-2 fa fa-pencil"></span> 
+                                <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
+                                    {{ $lastmod }}
+                                </time>
+                        {{- end }}
+                    {{- end }}
+                    <br>
                     <span class="ml-2 mr-1 fa fa-comments"></span><a class="text-muted" href="#reader-comments">
                         <span class="disqus-comment-count" data-disqus-identifier="{{.Permalink}}">{{ i18n "comments"}}</span></a>
 
@@ -87,6 +87,11 @@
             {{ end }}
             {{- partial "blog/components/hubspot-blog-email.html" . -}} {{/*  Email Subscription  */}}
         </aside>
-
+        {{ with .Params.nocomment }}
+        <!-- no comments -->
+        {{ else }}
+        <div id="remark42"></div>
+        <br>
+        {{ end }}
 </div>
 </div>

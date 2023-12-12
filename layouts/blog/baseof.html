@@ -2,6 +2,17 @@
 
 <html lang="{{ .Site.LanguageCode }}">
   <head>
+    {{ if .Site.Params.Remark42 }}
+    <script>
+    var remark_config = {
+      host: {{ .Site.Params.Remark42.Host }},
+      site_id: {{ .Site.Params.Remark42.Site_id }},
+      no_footer: true,
+      show_rss_subscription: false,
+    }
+    </script>
+    <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>    
+    {{ end }}
     {{ partial "meta.html" . }}
     <title>{{ block "title" . }}{{ if .Title }}{{ .Title | markdownify }}{{ else }}Izuma Networks Blog{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}
@@ -29,7 +40,6 @@
 
     <!-- Back To Top Button -->
     <div id="backtotop"><a href="#"></a></div>
-
 
 
 
