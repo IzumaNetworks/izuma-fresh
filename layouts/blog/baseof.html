@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-
+<!-- base blog -->
 <html lang="{{ .Site.LanguageCode }}">
   <head>
+    <script src="{{ "js/jquery-3.7.1.min.js" | relURL }}"></script>
     {{ if .Site.Params.Remark42 }}
     <script>
     var remark_config = {
@@ -9,6 +10,7 @@
       site_id: {{ .Site.Params.Remark42.Site_id }},
       no_footer: true,
       show_rss_subscription: false,
+      components: [ 'embed', 'last-comments', 'counter' ],
     }
     </script>
     <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>    

@@ -2,6 +2,7 @@
 
 <html lang="{{ .Site.LanguageCode }}">
   <head>
+    <script src="{{ "js/jquery-3.7.1.min.js" | relURL }}"></script>
     {{ partial "meta.html" . }}
     <title>{{ block "title" . }}{{ if .Title }}Izuma Networks Blog:&nbsp;{{ .Title | markdownify }}{{ else }}Izuma Networks Blog{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}
@@ -17,9 +18,11 @@
   </head>
   <body>
     <!-- Preloader -->
+    {{ with .Site.Params.preloader }}
     <div id="preloader">
       <div id="status"></div>
     </div>
+    {{ end }}
 
     {{ partial "navbar.html" . }}
     {{ partial "navbar-clone.html" . }}

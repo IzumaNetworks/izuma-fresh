@@ -47,6 +47,7 @@ $navbar-divider-height: 2px !default
   z-index: $navbar-fixed-z
 
 .navbar
+  --bs-navbar-padding-y: 0
   background-color: $navbar-background-color
   box-shadow: $navbar-box-shadow-size $navbar-box-shadow-color
   min-height: $navbar-height
@@ -100,6 +101,7 @@ $navbar-divider-height: 2px !default
     display: flex
     min-height: $navbar-height
     width: 100%
+    flex-wrap: nowrap
   &.has-shadow
     box-shadow: 0 2px 3px rgba($black, 0.1)
   &.is-fixed-bottom,

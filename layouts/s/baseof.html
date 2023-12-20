@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
+    <script src="{{ "js/jquery-3.7.1.min.js" | relURL }}"></script>
     {{ partial "meta.html" . }}
     <title>{{ block "title" . }}{{ if .Title }}Izuma Networks:&nbsp;{{ .Title | markdownify }}{{ else }}{{ if .Site.Title }}{{ .Site.Title | markdownify }}{{ end }}{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}

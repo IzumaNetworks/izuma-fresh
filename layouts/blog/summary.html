@@ -1,14 +1,18 @@
+{{ $articlelink := .Permalink }}
 <article>
-	<div class="my-3">
+	<div class="">
 		<div class="row">
-			<div class="col-12 col-sm-4 align-self-top px-0">
+			<div class="col-12 col-sm-4 align-self-top px-0 blog-summary-entry">
 
 				{{- /* Post Cover Image */ -}}
 				{{ $img := (.Resources.ByType "image").GetMatch "featured-image" }}
 				{{ with $img }}
 				{{ $imageName := $img.Title }}
 				{{ $imageName = $imageName | strings.TrimSuffix (path.Ext $imageName )}}
-				{{ partial "blog/tools/img" (dict "img" . "alt" $imageName ) }}
+				{{/* partial "blog/tools/img" (dict "img" . "alt" $imageName ) */}}
+				<a href="{{ $articlelink }}" class="">
+				<div class="image-card" style="background-image: url({{ .Key }})"></div>
+				</a>
 				{{ end }}
 
 			</div>
@@ -16,14 +20,15 @@
 			<div class="col-12 col-sm-8 px-0 pl-sm-3 pt-2 pt-sm-0">
 				<a href="{{ .Permalink }}" class="">
 					<h2 class="my-0 h4">{{ .Title }}<span title="In-Progress" class="float-right">
-							<i class="fas fa-circle-notch text-muted mx-1"></i></span></h2>
+							<i class="fas fa-circle-notch text-muted mx-1"></i></span></h2></a>
 				</a>
-				<p class="text-muted my-0">
-					<span class="mr-2"><time>{{ .PublishDate | time.Format .Site.Params.dateFormat }}</time></span>
+				<div class="spacer-blog-10px">&nbsp;</div>
+				<p class="text-muted my-0 tags">
+					<span class="mr-2"><span class="fa fa-clock-o" aria-hidden="true"></span>&nbsp;<time>{{ .PublishDate | time.Format .Site.Params.dateFormat }}</time></span>
 					{{/*  Tag list  */}}
+					&nbsp;
 					{{ range .Params.tags }}
-					<span aria-hidden="true" class="fa fa-tags"></span>
-					<a class="badge badge-light text-muted mr-1"
+					&nbsp;<a class="badge badge-light text-muted mr-1"
 						href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 					{{end}}
 

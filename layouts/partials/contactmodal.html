@@ -1,0 +1,48 @@
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="dlg-content" class="modal-body">
+  
+        <form id="contactform" class="needs-validation was-validated" novalidate="">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="username" class="form-label">Name</label>
+                <div class="input-group has-validation">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Name" required="">
+                <div class="invalid-feedback">
+                    Name is required.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                <div class="invalid-feedback">
+                  Enter a valid email address.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" name="message" id="message" placeholder="Message here." required=""></textarea>
+                <div class="invalid-feedback">
+                  Enter your message here.
+                </div>
+              </div>
+              <div class="g-recaptcha" data-sitekey="6Lf-E2wfAAAAAJNPnlwAACB2NyYZCCUCZAJnVBn6" data-callback='onCaptcha' ></div>
+              <div class="col-12">
+                 <div id="dlgmsg" style="color: red;"></div>
+              </div>
+            <button id="submitbtn" class="w-100 btn btn-primary btn-lg" 
+                  type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
