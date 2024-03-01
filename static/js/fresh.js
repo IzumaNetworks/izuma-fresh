@@ -1,11 +1,17 @@
 // a backup reveal in case of slow jquery
 window.addEventListener('load', function() { // makes sure the whole site is loaded 
     setTimeout(function() {
-        document.getElementById('status').style.display = 'none'; // will first fade out the loading animation 
-    }, 200);
-    setTimeout(function() {
-        document.getElementById('preloader').style.display = 'none'; // will fade out the white DIV that covers the website.
+        var el = document.getElementById('status')
+        if (el) {
+            el.style.display = 'none'; // will first fade out the loading animation 
+        }
     }, 300);
+    setTimeout(function() {
+        var el = document.getElementById('preloader')
+        if (el) {
+            el.style.display = 'none'; // will fade out the white DIV that covers the website.
+        }
+    }, 400);
     // document.body.style.overflow = 'visible'; // uncomment this if you want to change the overflow style of the body
 });
 

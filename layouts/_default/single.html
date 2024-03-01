@@ -8,6 +8,8 @@
     {{ partial "izumafonts.html" . }}        
   </head>
   <body>
+    <noscript><iframe src="https://{{ .Site.Params.gtmserver }}/ns.html?id={{ .Site.Params.gtmid }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{ if ne .Site.Params.preloader false }}
     <!-- Preloader -->
     <div id="preloader">

@@ -28,7 +28,35 @@ button {
     bottom: 0;
     background-color: $white;
     z-index: 99;
+    // -webkit-animation: animatepreload 0.3s; /* Safari, Chrome and Opera > 12.1 */
+    //    -moz-animation: animatepreload 0.3s; /* Firefox < 16 */
+    //     -ms-animation: animatepreload 0.3s; /* Internet Explorer */
+    //      -o-animation: animatepreload 0.3s; /* Opera < 12.1 */
+    //         animation: animatepreload 0.3s;
 }
+
+// @keyframes animatepreload {
+//     0%   {opacity: 1;}
+//     100% {opacity: 0;}
+// }
+
+// /* Firefox < 16 */
+// @-moz-keyframes animatepreload {
+//     from { opacity: 1; }
+//     to   { opacity: 0;}
+// }
+
+// /* Safari, Chrome and Opera > 12.1 */
+// @-webkit-keyframes animatepreload {
+//     from { opacity: 1; }
+//     to   { opacity: 0;}
+// }
+
+// /* Internet Explorer */
+// @-ms-keyframes animatepreload {
+//     from { opacity: 1; }
+//     to   { opacity: 0;}
+// }
 
 #status {
     width: 200px;
@@ -45,6 +73,12 @@ button {
     background-position: center;
     margin: -100px 0 0 -100px;
     // width and height divided by two 
+    // -webkit-animation: animatepreload 0.3s; /* Safari, Chrome and Opera > 12.1 */
+    //    -moz-animation: animatepreload 0.3s; /* Firefox < 16 */
+    //     -ms-animation: animatepreload 0.3s; /* Internet Explorer */
+    //      -o-animation: animatepreload 0.3s; /* Opera < 12.1 */
+    //         animation: animatepreload 0.3s;
+
 }
 
 // Back to top button

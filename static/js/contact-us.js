@@ -7,7 +7,12 @@ window.onloadTurnstileCallback = function () {
     turnstile.render('#turnstilebox', {
         sitekey: window.turnstileSiteKey,
         callback: function(token) {
-            console.log(`Challenge Success ${token}`);
+            console.log(`Challenge Success!! ${token}`);
+            if (window.Hula && window.Hula.SetCaptcha) {
+                window.Hula.SetCaptcha(token);
+            } else {
+                console.log("No Hula.SetCaptcha");
+            }   
             turnstileToken = token;
             validdatethese['turnstile'] = true;
             checkFields();
@@ -15,6 +20,33 @@ window.onloadTurnstileCallback = function () {
     });
 };
 
+
+
+window.submit_successcb = function(data) {
+    console.log("SUCCESS on form submission")
+    console.dir(data)
+    var output
+    try {
+        if (data && data.resp) {
+            output = JSON.parse(data.resp)
+            output = output.feedback
+        }
+    } catch(e) {
+        output = "Thank you!"
+    }
+    document.getElementById('successresult').innerHTML = output;
+    document.getElementById('successresult').style.display = 'block';
+    document.getElementById('contactform').style.display = 'none';
+    document.getElementById('failureresult').style.display = 'none';
+}
+window.submit_onfailure = function(error) {
+    console.error("FAILURE on form submission")
+    document.getElementById('successresult').innerHTML = output;
+    document.getElementById('successresult').style.display = 'none';
+    document.getElementById('contactform').style.display = 'block';
+    document.getElementById('failureresult').style.display = 'block';
+
+}
 
 
 function processForm() {
@@ -92,7 +124,7 @@ var validdatethese = {
 
 function checkFields() {
     var ok = true;
-    validatethese.forEach(function(id) {
+    validatekeys.forEach(function(id) {
         ok = ok && validdatethese[id];
     });
     if(ok) {
@@ -104,24 +136,36 @@ function checkFields() {
 }
 
 $(document).ready(function() {
-    validatethese = Object.keys(validdatethese);
-    validatethese.forEach(function(id) {
+// disable the default behavior on the submit button
+// otherwise clicking it, if the forms.js is not loaded, will cause a page reload
+document.getElementById('submitbtn').addEventListener('click', function(event) {
+    event.preventDefault();
+  });
+
+    validatekeys = Object.keys(validdatethese);
+    validatekeys.forEach(function(id) {
         if (id != 'turnstile') {
             document.getElementById(id).value = "";
             document.getElementById(id).onchange = function() {
                 console.log("changed: ", id);
                 validdatethese[id] = true;
-                document.getElementById(id).checkValidity();
+                if(document.getElementById(id).checkValidity()) {
+                    validdatethese[id] = true;
+                }
                 checkFields();
             }
             $('#'+id).keyup(function() {
                 console.log("keyup: ", id);
-                document.getElementById('contactform').checkValidity();
+                if(document.getElementById('contactform').checkValidity()) {
+                    validdatethese[id] = true;
+                }
                 checkFields();
             })
             $('#'+id).focusout(function() {
                 console.log("focusout: ", id);
-                document.getElementById('contactform').checkValidity();
+                if (document.getElementById('contactform').checkValidity()) {
+                    validdatethese[id] = true;
+                }
                 checkFields();
             })  
             $('#'+id).on('invalid', function(e){
@@ -133,33 +177,10 @@ $(document).ready(function() {
         }
     })
     $('#contactform').submit(function(e) {
-        e.preventDefault();
-        if(checkFields()) {
-            processForm();
-        }
+//        e.preventDefault();
+        // if(checkFields()) {
+        //     processForm();
+        // }
      });
 
 });
-
-
-
-// function sendEmail() {
-//     var xhr = new XMLHttpRequest();
- 
-// xhr.onreadystatechange = function() {
-//   if(xhr.readyState === 4) {
-//     if(xhr.status === 200) {
-//          alert(xhr.responseText);
-//     } else {
-//           alert('Error Code: ' +  objXMLHttpRequest.status);
-//           alert('Error Message: ' + objXMLHttpRequest.statusText);
-//     }
-//   }
-// }
-// xhr.open('POST', 'postcontact.php');
-// xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-// // xhr.send("format=json");
-// xhr.send();
-// // var resp = xml.responseText;
-// //     console.log(resp);	
-// }

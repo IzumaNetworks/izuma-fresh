@@ -1,7 +1,8 @@
+<meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
 <meta charset="utf-8">
 
-{{ template "_internal/google_analytics_async.html" . }}
+<!-- {{/* template "_internal/google_analytics_async.html" . */}} -->
 {{ if eq .Site.Params.openGraph true }}
 {{ template "_internal/opengraph.html" . }}
 {{ end }}
@@ -13,14 +14,20 @@
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
-      content="default-src 'unsafe-inline' 'self' data: euc-widget.freshworks.com comment.izumanetworks.com  fonts.googleapis.com forms.hscollectedforms.net api.hubspot.com hubspot-forms-static-embed.s3.amazonaws.com forms.hsforms.com forms.hubspot.com www.google-analytics.com; 
-               frame-src 'self' challenges.cloudflare.com comment.izumanetworks.com izumanetworks.freshdesk.com www.izumanetworks.com js.hsforms.net www.gstatic.com js.usermessages.com www.google.com app.hubspot.com www.youtube.com forms.hsforms.com;
-               style-src 'self' fonts.googleapis.com comment.izumanetworks.com www.google.com www.izumanetworks.com static.licdn.com 'unsafe-inline';
-               script-src 'self' 'unsafe-inline' static.cloudflareinsights.com challenges.cloudflare.com badges.linkedin.com euc-widget.freshworks.com unpkg.com www.googletagmanager.com js.hs-banner.com js.usemessages.com forms.hsforms.com js.hs-analytics.net js.hscollectedforms.net js.hsforms.net cdnjs.cloudflare.com www.google-analytics.com apis.google.com www.google.com www.gstatic.com ajax.googleapis.com js-na1.hs-scripts.com platform.linkedin.com;
+      content="default-src 'unsafe-inline' 'self' data: {{ .Site.Params.hulahost }} euc-widget.freshworks.com comment.izumanetworks.com  fonts.googleapis.com www.google-analytics.com; 
+               frame-src 'self' sst.izumanetworks.com {{ .Site.Params.hulahost }} sstp.izumanetworks.com challenges.cloudflare.com comment.izumanetworks.com izumanetworks.freshdesk.com www.izumanetworks.com www.gstatic.com js.usermessages.com www.google.com app.hubspot.com www.youtube.com ;
+               style-src 'self' fonts.googleapis.com comment.izumanetworks.com sst.izumanetworks.com sstp.izumanetworks.com www.google.com www.izumanetworks.com static.licdn.com 'unsafe-inline';
+               script-src 'self' 'unsafe-inline' {{ .Site.Params.hulahost }} sst.izumanetworks.com sstp.izumanetworks.com tatic.cloudflareinsights.com challenges.cloudflare.com badges.linkedin.com euc-widget.freshworks.com unpkg.com www.googletagmanager.com js.usemessages.com cdnjs.cloudflare.com www.google-analytics.com apis.google.com www.google.com www.gstatic.com ajax.googleapis.com platform.linkedin.com;
                font-src 'self' fonts.gstatic.com;
-               img-src 'self' data: track.hubspot.com perf.hsforms.com www.googletagmanager.com forms.hsforms.com forms-na1.hsforms.com www.google.com media.licdn.com; 
-               child-src izumanetworks.freshdesk.com www.google.com js.hsforms.net forms.hsforms.com;">
+               img-src 'self' data: www.googletagmanager.com www.google.com media.licdn.com sst.izumanetworks.com sstp.izumanetworks.com; 
+               child-src izumanetworks.freshdesk.com www.google.com ;">
 
+<!-- 
+  default-src forms.hscollectedforms.net api.hubspot.com hubspot-forms-static-embed.s3.amazonaws.com forms.hsforms.com forms.hubspot.com
+  frame-src forms.hsforms.com js.hsforms.net
+  script-src js.hs-banner.com forms.hsforms.com js.hs-analytics.net js.hscollectedforms.net js.hsforms.net js-na1.hs-scripts.com
+  img-src track.hubspot.com  perf.hsforms.com forms.hsforms.com  forms-na1.hsforms.com 
+  child src js.hsforms.net forms.hsforms.com-->
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
 <meta name="robots" content="index,follow" />
@@ -51,13 +58,11 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-161HYQJHZ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!-- <script type="text/javascript" src="http://localhost:8088/scripts/hula.js"></script> -->
 
-  gtag('config', 'G-161HYQJHZ2');
-</script>
- -->
+<!--gtm-->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://{{ .Site.Params.gtmserver }}/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ .Site.Params.gtmid }}');</script>
