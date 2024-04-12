@@ -8,6 +8,17 @@
     {{ partial "izumafonts.html" . }}
   </head>
   <body>
+<!-- begin hula -->
+<script>
+  var u=encodeURIComponent((window.location != window.parent.location) ? document.referrer : document.location.href);
+  document.write('<iframe id="hulaframe" src="{{ .Site.Params.hulabase }}/v/hula_hello.html?h={{ .Site.Params.hulaid }}&u='+u+'" height="0" width="0" style="display:none;visibility:hidden"></iframe>')
+  </script>
+  <script src="{{ .Site.Params.hulabase }}/scripts/forms.js"></script>
+  <noscript>
+  <iframe src="{{ .Site.Params.hulabase }}/v/hulans.html?h={{ .Site.Params.hulaid }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- end hula -->
+
     <noscript><iframe src="https://{{ .Site.Params.gtmserver }}/ns.html?id={{ .Site.Params.gtmid }}"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Preloader -->
