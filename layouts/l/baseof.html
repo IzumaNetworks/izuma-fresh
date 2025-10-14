@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <script src="{{ "js/jquery-3.7.1.min.js" | relURL }}"></script>
+    {{ partial "meta.html" . }}
+    <title>{{ block "title" . }}{{ if .Title }}Izuma Networks:&nbsp;{{ .Title | markdownify }}{{ else }}{{ if .Site.Title }}{{ .Site.Title | markdownify }}{{ end }}{{ end }}{{ end }}</title>
+    {{ partial "css.html" . }}
+    {{ partial "izumafonts.html" . }}
+  </head>
+  <body>
+    <noscript><iframe src="https://{{ .Site.Params.gtmserver }}/ns.html?id={{ .Site.Params.gtmid }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
+
+    {{ block "main" . }}
+    {{ end }}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{ if .Site.Params.sidebar }}
+    {{ partial "sidebar2.html" . }}
+    {{ end }}
+
+    {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
+    {{ partial "consent.html" }}    
+  </body>
+</html>
