@@ -11,7 +11,7 @@
 				{{ $imageName = $imageName | strings.TrimSuffix (path.Ext $imageName )}}
 				{{/* partial "blog/tools/img" (dict "img" . "alt" $imageName ) */}}
 				<a href="{{ $articlelink }}" class="">
-				<div class="image-card" style="background-image: url({{ .Key }})"></div>
+				<div class="image-card" style="background-image: url({{ .RelPermalink }})"></div>
 				</a>
 				{{ end }}
 

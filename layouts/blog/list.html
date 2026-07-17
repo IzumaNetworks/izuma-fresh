@@ -20,11 +20,11 @@
 
 			{{- /* Cover Image */ -}}
 			<div class="row justify-content-center mx-2">
-				{{ $img := (.Resources.ByType "image").GetMatch "featured-image" }}
+				{{ $img := resources.Get ((.Resources.ByType "image").GetMatch "featured-image" ) }}
 				{{ with $img }}
 				{{ $imageName := $img.Title }}
 				{{ $imageName = $imageName | strings.TrimSuffix (path.Ext $imageName )}}
-				{{ partial "blog/tools/img" (dict "img" . "alt" $imageName ) }}
+				{{ partial "blog/tools/img" (dict "img" .RelPermalink "alt" $imageName ) }}
 				{{ end }}				
 			</div>
 			{{/*  {{ $img := (.Resources.ByType "image").GetMatch "featured-image" }}
